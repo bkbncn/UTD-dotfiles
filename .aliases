@@ -4,6 +4,7 @@
 # about system #
 alias v='vim'
 alias n='nedit'
+alias g='gedit'
 alias cd..='cd ..'
 alias cd-='cd -'
 alias cd.2='cd ../..'
