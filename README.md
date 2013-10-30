@@ -15,4 +15,5 @@ For Cadence settings, go to project folder first
 
 	ln -s ~/.dotfiles/cdsinit .cdsinit
 	ln -s ~/.dotfiles/cdsenv .cdsenv
-          
+    ln -s ~/.dotfiles/leBindKeys.il leBindKeys.il
+    ln -s ~/.dotfiles/schBindKeys.il schBindKeys.il      
