@@ -60,15 +60,6 @@ CDPATH=:..:~:~/bin
 
 cd
 
-# functions
-function dir
-{
-  if [ $# != 0 ]
-  then ls -alF $* | more
-  else ls -alF ./ | more
-  fi
-}
-
 fi 	# Finish processing interactive shell functions
 
 # $Source: /warez/home/skel/src/RCS/.bashrc,v $

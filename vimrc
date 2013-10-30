@@ -13,9 +13,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'matchit.zip'
 
-if v:version < 703
-    Bundle 'tpope/vim-git'
-endif
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 
@@ -202,8 +199,8 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 "" Leader
-"let mapleader=","
-"let g:mapleader=","
+let mapleader=","
+let g:mapleader=","
 
 "上下左右键的行为 会显示其他信息
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"    "回车即选中当前项
