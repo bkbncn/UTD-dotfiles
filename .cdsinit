@@ -1,0 +1,102 @@
+;updated at Oct 29, 2013
+;####################Xiangyu################
+;
+;################################################
+;#
+;# LET FUNCTIONS CAN BE REDEFINED
+;#
+;################################################
+sstatus(writeProtect nil)
+
+let((skillPath)
+   skillPath= strcat(
+    ". ~ "                                          ; Current & home directory
+    prependInstallPath("samples/techfile ")         ; sample source technology files
+   )
+   setSkillPath(skillPath)
+)
+
+;################################################
+;#
+;# LOAD APPLICATION BIND KEY DEFINITIONS
+;#
+;################################################
+let( (bindKeyFileList file path saveSkillPath)
+    bindKeyFileList = '(
+                 ".leBindKeys.il" 
+                 ".schBindKeys.il"
+                    )
+    
+;  this is the path that is searched for the files
+    path = strcat(
+              ". ~ "
+              prependInstallPath("local ")
+              prependInstallPath("samples/local")
+             )
+    saveSkillPath=getSkillPath()
+    setSkillPath(path)
+;
+;
+ 
+   foreach(file bindKeyFileList
+       if(isFile(file) then
+          loadi(file)
+         )
+    )
+ 
+    setSkillPath(saveSkillPath)
+)
+
+;################################################
+;#
+;# MISCELLANEOUS
+;#
+;################################################
+;;editor = "gedit"; set editor to be gedit
+editor = "xterm +sb -geometry 80x70 -e vim"
+hiResizeWindow(window(1) list(1320:50 1920:1000)); resize CIW windows
+ddsNewsClose(); close what's new window
+ddsOpenLibManager(); open library manager at startup
+
+;################################################
+;#
+;# LOAD CALIBRE SKILL INTERFACE IF ENVIRONMENT VAR IS SET
+;#
+;################################################
+ibmPdkPath="/proj/cad/library/mosis/IBM_PDK/"
+
+  cond(
+      ( index(getVersion() "5.1")  loadContext(strcat( ibmPdkPath "cmrf8sf/V1.8.0.4DM/cdslib51/Skill/ibmPdkProcs510.cxt"))
+                                      hiRegTimer("ibmPdkInit()" 1))
+      ( t warn("ibmPdkProcs file not loaded. \n"))
+  );cond
+
+;load(strcat( ibmPdkPath "cmrf8sf/V1.8.0.4DM/cdslib51/Skill/ibmPdkBindkeys.il"))
+
+;; Calibre setup
+
+;; Load Calibre Skill Interface if environment var is set
+mgc_home=getShellEnvVar("MGC_HOME")
+
+if( mgc_home!=nil && isDir(mgc_home) && isReadable(mgc_home) then
+    ; Load calibre.skl for Cadence versions 4.4 and greater
+    load(strcat(mgc_home "/shared/pkgs/icv/tools/queryskl/calibre.skl"))
+else
+    ; MGC_HOME is not set
+    printf("Calibre Skill Interface not loaded.\n")
+)
+;; End of Calibre Skill Interface
+
+/* Skill commands for user customization */
+hiSetFilterOptions(t t t t t t t)                 /* Log filter options      */
+hiGetCIWindow()->displayMouseBinding = t
+hiGetCIWindow()->scrollBars = t                   /* Turn on scroll bars     */
+hiGetCIWindow()->infix = nil                      /* Turn off infix          */
+hiGetCIWindow()->displayMouseBinding = t
+hiSetUndoLimit(10)                                /* Allow 10 undos          */
+hiSetMultiClickTime(500)                          /* Set double click=500    */
+hiFormApply( hiSysProps )
+
+;END OF USER CUSTOMIZATION
+;####################Xu####################
+

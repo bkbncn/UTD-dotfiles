@@ -1,0 +1,22 @@
+*~bk
+
+# for Vim #
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+# Ignore tags created by ctags
+TAGS
+!TAGS/
+tags
+!tags/
+
+# for SublimeText #
+*.sublime-workspace
+
+# for Mercurial #
+/.hg/*
+*/.hg/*
+.hgignore

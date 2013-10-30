@@ -1,0 +1,20 @@
+[user]
+	name = Xiangyu Xu
+	email = bkbncn@gmail.com
+[color]
+	ui = always
+[core]
+	excludesfile = $HOME/.dotfiles/.gitignore_global
+	editor = vim
+[alias]
+	ca = commit -a -v
+	co = checkout
+	cm = checkout master
+	st = status
+	throw = reset --hard HEAD
+	throwh = reset --hard HEAD^
+[color]
+	ui = true
+[push]
+	default = current
+
