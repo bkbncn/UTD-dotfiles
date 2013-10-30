@@ -42,13 +42,13 @@ alias llfm='ls -alh | grep -v "^d"|more'
 #alias xtb="xterm -bg black -fg  lightblue  -sb &"
 
 # about source #
-alias pfic5=". /proj/cad/startup/profile.ic-5"
+alias pfic5=".  /proj/ndl/home/xxx110230/cad/source/profile.ic-5"
 alias pfsyn='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys'
 
 # about application #
 alias cds_install_dir="$CDS"
-alias runic='cd /proj/ndl/home/xxx110230/cad/cadence/;. /proj/cad/startup/profile.ic-5;icfb&'
-alias runit='cd ~/training/ADE_5141;. /proj/cad/startup/profile.ic-5;icms&'
+alias runic='cd /proj/ndl/home/xxx110230/cad/cadence/;. /proj/ndl/home/xxx110230/cad/source/profile.ic-5;icfb&'
+alias runit='cd ~/training/ADE_5141;. /proj/ndl/home/xxx110230/cad/source/profile.ic-5;icms&'
 alias rundv='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys;design_vision&'
 alias dv="design_vision&"
 alias runhspice='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys;hspice&'
