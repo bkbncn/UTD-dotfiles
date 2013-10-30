@@ -68,7 +68,39 @@ fi 	# Finish processing interactive shell functions
 
 export PATH=$PATH:/bin
 
-for file in ~/.dotfiles/bash.{aliases,extra,functions,OS_specific}; do
+# OS-specific settings #
+
+UNAME=$(uname)
+ 
+if   [ $UNAME == 'Linux' ]; then
+
+## There are some aliases specific for Linux
+	
+	export PATH=$HOME/local/bin:$HOME/.linuxbrew/bin:$PATH
+	export LD_LIBRARY_PATH=$HOME/.linuxbrew/lib
+	[[ -s ~/local/etc/profile.d/autojump.bash ]] && . ~/local/etc/profile.d/autojump.bash
+	
+	export LS_OPTIONS=--color=auto
+	alias rm='rm -I'
+	alias ssh="ssh -Y"
+	alias grep='grep --color=auto' 
+
+#  end for Linux
+
+ elif [ $UNAME == 'SunOS' ]; then
+
+## There are some aliases specific for SunOS
+
+	alias rm='rm -i'
+	alias ssh="ssh -X"
+
+# end for SunOS
+
+fi
+
+# loading other settings #
+
+for file in ~/.dotfiles/bash.{aliases,extra,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
