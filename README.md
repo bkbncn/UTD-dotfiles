@@ -12,6 +12,7 @@ for vim, install Vundle first
 	vim +:BundleInstall
         
 Cadence settings
+
 	ln -s ~/.dotfiles/.cdsinit .cdsinit
 	ln -s ~/.dotfiles/.cdsenv .cdsenv
           
