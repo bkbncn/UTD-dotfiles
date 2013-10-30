@@ -77,7 +77,7 @@ fi 	# Finish processing interactive shell functions
 
 export PATH=$PATH:/bin
 
-for file in ~/.dotfiles/.{aliases,extra,functions,OS_specific}; do
+for file in ~/.dotfiles/bash.{aliases,extra,functions,OS_specific}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
