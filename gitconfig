@@ -10,6 +10,8 @@
 	ca = commit -a -v
 	co = checkout
 	cm = checkout master
+	br = branch
+	lg = log --stat --max-count=5
 	st = status
 	throw = reset --hard HEAD
 	throwh = reset --hard HEAD^
