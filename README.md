@@ -10,3 +10,8 @@ for vim, install Vundle first
 
 	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	vim +:BundleInstall
+        
+Cadence settings
+	ln -s ~/.dotfiles/.cdsinit .cdsinit
+	ln -s ~/.dotfiles/.cdsenv .cdsenv
+          
