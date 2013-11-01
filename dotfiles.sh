@@ -9,7 +9,7 @@
 dir=~/.dotfiles                    # dotfiles directory
 files="bashrc vimrc tmux.conf gitconfig oceanrc"    # list of files/folders to symlink in homedir
 
-cd $dir
+#cd $dir
 
 # backup any existing dotfiles in homedir, then create symlinks from the homedir to any files in the ~/.dotfiles directory specified in $files
 for file in $files; do

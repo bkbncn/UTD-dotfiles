@@ -1,4 +1,4 @@
-"updated at Oct 29, 2013
+"updated at Nov 1, 2013
 "####################Xiangyu################
 """"""""""""""""""""""""""""""""
 " Vundle
@@ -9,6 +9,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'bkbncn/vim-filetype-detector'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'matchit.zip'
@@ -16,8 +17,13 @@ Bundle 'matchit.zip'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 
+Bundle 'Raimondi/delimitMate'
+au FileType python let b:delimitMate_nesting_quotes = ['"']
+
 Bundle 'bling/vim-airline'
+
 Bundle 'kien/ctrlp.vim'
+
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
 " 默认方向键左右可以切换buffer
 noremap <leader>bn :MBEbn<CR>
@@ -27,6 +33,7 @@ noremap <leader>bd :MBEbd<CR>
 Bundle 'nathanaelkane/vim-indent-guides'
 
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
+
 Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'ivanov/vim-ipython'
@@ -43,7 +50,6 @@ Bundle 'mbbill/undotree'
 nnoremap <Leader>u :UndotreeToggle<CR>
 
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
 nnoremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeChDirMode=2
 let NERDTreeShowBookmarks=1
@@ -51,6 +57,7 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeDirArrows=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+Bundle 'scrooloose/nerdcommenter'
 
 Bundle 'scrooloose/syntastic'
 nnoremap <Leader>s :Errors<CR>
@@ -68,14 +75,14 @@ nnoremap <Leader>vi :VimuxInspectRunner<CR>
 nnoremap <Leader>vl :VimuxRunLastCommand<CR>
 nnoremap <Leader>vc :VimuxClearRunnerHistory<CR>
 
-if executable('ctags')
-    Bundle 'majutsushi/tagbar'
-    nnoremap <silent> <leader>t :TagbarToggle<CR>
-    let g:tagbar_autofocus=1
-    let g:tagbar_expand=1
-    let g:tagbar_foldlevel=2
-    let g:tagbar_autoshowtag=1
-endif
+Bundle 'majutsushi/tagbar'
+nnoremap <silent> <leader>t :TagbarToggle<CR>
+let g:tagbar_autofocus=1
+let g:tagbar_expand=1
+let g:tagbar_foldlevel=2
+let g:tagbar_autoshowtag=1
+
+Bundle 'verilog.vim'
 
 Bundle 'kdurant/verilog-testbench'
 
@@ -130,26 +137,25 @@ filetype plugin indent on
 colorscheme solarized
 set background=dark				
 se  t_Co=16
+
 set number
 set ruler
 set cursorline          " Highlight current line
-set laststatus=2       	" Always show the statusline
-set cmdheight=2   		" Make the command area two lines high
+set laststatus=2               " Always show the statusline
+set cmdheight=2           " Make the command area two lines high
 set noshowmode          " Don't show the mode since Powerline will shows it
 set title               " Set the title of the window in the terminal to the file
-set showcmd    	        " show the command you're running in the status bar
+set showcmd                    " show the command you're running in the status bar
 set hidden
-set synmaxcol=999     " Syntax coloring too-long lines is slow
-set noswapfile
+set synmaxcol=999       " Syntax coloring too-long lines is slow
 set fileencoding=utf-8    
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set autoread           " Automatically reload changes if detected
-set autowrite          " Writes on make/shell commands
+set autoread            " Automatically reload changes if detected
+set autowrite           " Writes on make/shell commands
 set wildmenu
-set clipboard+=unnamed	" Yanks go on clipboard instead.
-set iskeyword+=\$,-   	" Add extra characters that are valid parts of variables
-set scrolloff=3        	" Keep three lines below the last line when scrolling
-set spelllang=en_us
+set iskeyword+=\$,-           " Add extra characters that are valid parts of variables
+set scrolloff=3                " Keep three lines below the last line when scrolling
+set spelllang=en_us     " :set spell to start spell check
 set showmatch
 set pastetoggle=<F11>
 set foldmethod=indent
@@ -157,31 +163,32 @@ set foldlevel=99
 set ttimeoutlen=40
 
 " Text Format
-set tabstop=8     "ts
-set shiftwidth=4  "sw 
-set softtabstop=4    " every backspace delete #sts spaces
-set expandtab    "et, enpend TAB to space,Ctrl-V<TAB> to input TAB
-set smarttab    "sta,在行首按TAB将加入sw个空格，否则加入ts个空格
-set smartindent    "si
-set backspace=2           " Allow backspacing over autoindent, EOL, and BOL
+set tabstop=8           " ts
+set shiftwidth=4        " sw 
+set softtabstop=4       " every backspace delete #sts spaces
+set expandtab           " et, enpend TAB to space,Ctrl-V<TAB> to input TAB
+set smarttab            " sta,在行首按TAB将加入sw个空格，否则加入ts个空格
+set smartindent         " si
+set backspace=2         " Allow backspacing over autoindent, EOL, and BOL
 
 " Searching
 set ignorecase "ic, Case insensitive search
 set smartcase  " Non-case sensitive search
 set incsearch  "is, Incremental search, partial match
 set hlsearch   "hls, Highlight search results
-set nowrapscan 
+"set nowrapscan 
 
 " Mouse
 set mouse=a    " Mouse in all modes
 set mousemodel=popup
+set clipboard+=unnamed        " Yanks go on clipboard instead.
 
 " auto completion
-set pumheight=7          " Keep a small completion window
+"set pumheight=7          " Keep a small completion window
 " Ignore these files when completing
-set wildignore+=*.o,*.obj,.git,*.pyc
-set wildignore+=eggs/**
-set wildignore+=*.egg-info/**
+"set wildignore+=*.o,*.obj,.git,*.pyc
+"set wildignore+=eggs/**
+"set wildignore+=*.egg-info/**
 
 "设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
@@ -199,8 +206,8 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 "" Leader
-let mapleader=","
-let g:mapleader=","
+"let mapleader=","
+"let g:mapleader=","
 
 "上下左右键的行为 会显示其他信息
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"    "回车即选中当前项

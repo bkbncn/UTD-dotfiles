@@ -1,4 +1,4 @@
-#updated at Oct 29, 2013
+#updated at Nov 1, 2013
 ####################Xiangyu####################
 
 alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^\/]*\//|  /g' -e 's/|  \([^|]\)/\`--\1/g'"
@@ -6,25 +6,26 @@ alias treea="find . -print | sort | sed 's;[^/]*/;|___;g;s;___|; |;g'"
 
 mdcd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
-todo() 
+todo()
 {
-if [[ "$*" == "" ]] ; then
-    cat ~/.todo
-else
-    echo "$*" > ~/.todo
-fi
+    if [[ "$*" == "" ]] ; then
+        cat ~/.todo
+    else
+        echo "$*" > ~/.todo
+    fi
 }
 
 bk()
 {
-if [ -n "$1" ]
+    if [ -n "$1" ]
 # Test whether wildcard argument is present (non-empty).
-then
-    cp "$1"{,~bk} 
-else
-    echo "no wildcard argument"
-fi
+    then
+        cp "$1"{,~bk} 
+    else
+        echo "no wildcard argument"
+    fi
 }
+
 
 function lgr
 # Test whether command-line argument is present (non-empty).
