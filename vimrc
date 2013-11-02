@@ -23,9 +23,14 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 Bundle 'bling/vim-airline'
 
 Bundle 'kien/ctrlp.vim'
-
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+	
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
-" 默认方向键左右可以切换buffer
+noremap <leader>bf :MBEbf<CR>
+noremap <leader>bb :MBEbb<CR>
 noremap <leader>bn :MBEbn<CR>
 noremap <leader>bp :MBEbp<CR>
 noremap <leader>bd :MBEbd<CR>
@@ -161,6 +166,7 @@ set pastetoggle=<F11>
 set foldmethod=indent
 set foldlevel=99
 set ttimeoutlen=40
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip 
 
 " Text Format
 set tabstop=8           " ts
