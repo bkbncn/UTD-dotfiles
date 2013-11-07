@@ -83,7 +83,8 @@ if   [ $UNAME == 'Linux' ]; then
 	export LS_OPTIONS=--color=auto
 	alias rm='rm -I'
 	alias ssh="ssh -Y"
-	alias grep='grep --color=auto' 
+	alias grep='grep --color=auto'
+	alias v='vim'
 
 #  end for Linux
 
@@ -93,6 +94,7 @@ if   [ $UNAME == 'Linux' ]; then
 
 	alias rm='rm -i'
 	alias ssh="ssh -X"
+	alias v="vim -u "$HOME/.dotfiles/vimrc.SunOS""
 
 # end for SunOS
 

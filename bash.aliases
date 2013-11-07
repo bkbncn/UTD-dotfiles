@@ -2,7 +2,6 @@
 ####################Xiangyu####################
  
 # about system #
-alias v='vim'
 alias n='nedit'
 alias g='gedit'
 alias cd-='cd -'
@@ -10,6 +9,7 @@ alias ..='cd ..'
 alias cd..='cd ..'
 alias cd.2='cd ../..'
 alias cd.3='cd ../../..'
+alias cd.4='cd ../../../..'
 
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 

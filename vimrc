@@ -1,4 +1,4 @@
-"updated at Nov 1, 2013
+"updated at Nov 7, 2013
 "####################Xiangyu################
 """"""""""""""""""""""""""""""""
 " Vundle
@@ -210,10 +210,6 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
-
-"" Leader
-"let mapleader=","
-"let g:mapleader=","
 
 "上下左右键的行为 会显示其他信息
 inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"    "回车即选中当前项
