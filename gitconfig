@@ -7,7 +7,7 @@
 	excludesfile = $HOME/.dotfiles/gitignore_global
 	editor = vim
 [alias]
-	ca = commit -a -v
+	ca = commit -av
 	co = checkout
 	cm = checkout master
 	br = branch

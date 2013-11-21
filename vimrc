@@ -12,8 +12,14 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'bkbncn/vim-filetype-detector'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
-Bundle 'matchit.zip'
 
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
+let g:session_autosave = 'no'
+Bundle 'xolox/vim-easytags'
+let g:easytags_updatetime_warn = 0
+
+Bundle 'matchit.zip'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 
@@ -29,10 +35,12 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 	
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
+noremap <C-TAB>   :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
+"noremap <leader>bn :MBEbn<CR>
+"noremap <leader>bp :MBEbp<CR>
 noremap <leader>bf :MBEbf<CR>
 noremap <leader>bb :MBEbb<CR>
-noremap <leader>bn :MBEbn<CR>
-noremap <leader>bp :MBEbp<CR>
 noremap <leader>bd :MBEbd<CR>
 
 Bundle 'nathanaelkane/vim-indent-guides'
