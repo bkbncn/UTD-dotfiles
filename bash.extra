@@ -1,6 +1,9 @@
 #updated at Nov 1, 2013
 ####################Xiangyu####################
 
+export NDL_HOME=/proj/ndl/home/xxx110230
+# CDS_INST_DIR=$CDS=$CDSHOME=$CDSROOT 
+ 
 # cadence lockfile # 
 # clsAdminTool -ale .
 # to list all edit locks file by cadence in the current folder

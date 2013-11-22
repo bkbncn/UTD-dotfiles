@@ -7,6 +7,7 @@
 	excludesfile = $HOME/.dotfiles/gitignore_global
 	editor = vim
 [alias]
+	ci = commit 
 	ca = commit -av
 	co = checkout
 	cm = checkout master

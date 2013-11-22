@@ -35,10 +35,8 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 	
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
-noremap <C-TAB>   :MBEbn<CR>
-noremap <C-S-TAB> :MBEbp<CR>
-"noremap <leader>bn :MBEbn<CR>
-"noremap <leader>bp :MBEbp<CR>
+noremap <leader>bn :MBEbn<CR>
+noremap <leader>bp :MBEbp<CR>
 noremap <leader>bf :MBEbf<CR>
 noremap <leader>bb :MBEbb<CR>
 noremap <leader>bd :MBEbd<CR>
@@ -242,7 +240,7 @@ command! W w
 command! Q q
 
 "press jk to exit from insert mode
-imap jk <Esc>
+imap kj <Esc>
 
 let g:netrw_list_hide='.DS_Store,^\.git/$'    " Hide .DS_Store and .git
 

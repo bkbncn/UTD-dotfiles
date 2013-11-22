@@ -48,7 +48,6 @@ alias pfic5=".  /proj/ndl/home/xxx110230/cad/source/profile.ic-5"
 alias pfsyn='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys'
 
 # about application #
-alias cds_install_dir="$CDS" # $CDSHOME $CDSROOT are equal to $CDS
 alias runic='cd /proj/ndl/home/xxx110230/cad/cadence/;. /proj/ndl/home/xxx110230/cad/source/profile.ic-5;icfb&'
 alias runit='cd ~/training/ADE_5141;. /proj/ndl/home/xxx110230/cad/source/profile.ic-5;icms&'
 alias rundv='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys;design_vision&'
