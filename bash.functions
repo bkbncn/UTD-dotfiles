@@ -26,7 +26,19 @@ bk()
     fi
 }
 
-
+cpv()
+{
+    if [ -n "$2" ]
+# Test whether wildcard argument is present (non-empty).
+    then
+    {
+        cp "$1" "$2"
+        vim "$2" 
+    }
+    else
+        echo "no wildcard argument"
+    fi
+}
 function lgr
 # Test whether command-line argument is present (non-empty).
 {

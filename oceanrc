@@ -1,6 +1,7 @@
 ;updated at Oct 29, 2013
 ;####################Xiangyu################
 
+alias l load
 alias h ocnHelp
 alias d ocnDisplay
 alias sr selectResults
