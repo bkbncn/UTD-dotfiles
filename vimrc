@@ -43,8 +43,6 @@ noremap <leader>bd :MBEbd<CR>
 
 Bundle 'nathanaelkane/vim-indent-guides'
 
-Bundle 'techlivezheng/vim-plugin-minibufexpl'
-
 Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'ivanov/vim-ipython'
@@ -94,7 +92,6 @@ let g:tagbar_foldlevel=2
 let g:tagbar_autoshowtag=1
 
 Bundle 'verilog.vim'
-
 Bundle 'kdurant/verilog-testbench'
 
 ""
