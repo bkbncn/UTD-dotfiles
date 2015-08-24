@@ -1,7 +1,7 @@
 #updated at Nov 1, 2013
 ####################Xiangyu####################
 
-export NDL_HOME=/proj/ndl/home/xxx110230
+# NDL_HOME=/proj/ndl/home/xxx110230
 # CDS_INST_DIR=$CDS=$CDSHOME=$CDSROOT 
  
 # cadence lockfile # 
@@ -13,6 +13,7 @@ export NDL_HOME=/proj/ndl/home/xxx110230
 
 # misc #
 #'nautilus .' open in finder
+alias open='nautilus'
 #'ps2pdf' can convert .pf file to .pdf file
 #'dos2unix' - DOS to UNIX and vice versa text file format converter
 #'soffice' - LibreOffice suites

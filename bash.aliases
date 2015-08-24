@@ -27,22 +27,6 @@ alias lldm='ls -alh | grep "^d" | egrep -v " \.+$" | more'
 alias llf='ls -alh | grep -v "^d"'
 alias llfm='ls -alh | grep -v "^d"|more'
 
-# about terminal color #
-#alias xt1="xterm -bg black -fg      yellow -sb &"
-#alias xt2="xterm -bg black -fg  darkorange -sb &"
-#alias xt3="xterm -bg black -fg       green -sb &"
-#alias xt4="xterm -bg black -fg     violet  -sb &"
-#alias xt5="xterm -bg black -fg       red   -sb &"
-#alias xt6="xterm -bg black -fg  lightblue  -sb &"
-#alias xt7="xterm -bg lightyellow -fg black -sb &"
-#alias xt8="xterm -bg white       -fg black -sb &"
-#alias xty="xterm -bg black -fg   yellow    -sb &"
-#alias xto="xterm -bg black -fg  darkorange -sb &"
-#alias xtw="xterm -bg black -fg    white    -sb &"
-#alias xtg="xterm -bg black -fg    green    -sb &"
-#alias xtv="xterm -bg black -fg   violet    -sb &"
-#alias xtb="xterm -bg black -fg  lightblue  -sb &"
-
 # about source #
 alias pfic5=".  /proj/ndl/home/xxx110230/cad/source/profile.ic-5"
 alias pfsyn='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys'

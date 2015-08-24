@@ -1,64 +1,66 @@
-"updated at Nov 7, 2013
+"updated at Aug 24, 2015
 "####################Xiangyu################
 """"""""""""""""""""""""""""""""
 " Vundle
 """"""""""""""""""""""""""""""""
 set nocompatible " iMproved
 filetype off     " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bkbncn/vim-filetype-detector'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
 
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-session'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bkbncn/vim-filetype-detector'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
 let g:session_autosave = 'no'
-Bundle 'xolox/vim-easytags'
+Plugin 'xolox/vim-easytags'
 let g:easytags_updatetime_warn = 0
 
-Bundle 'matchit.zip'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+Plugin 'matchit.zip'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 	
-Bundle 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
 noremap <leader>bn :MBEbn<CR>
 noremap <leader>bp :MBEbp<CR>
 noremap <leader>bf :MBEbf<CR>
 noremap <leader>bb :MBEbb<CR>
 noremap <leader>bd :MBEbd<CR>
 
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
-Bundle 'ivanov/vim-ipython'
-Bundle 'klen/python-mode'
-"Bundle 'nvie/vim-flake8'
+Plugin 'ivanov/vim-ipython'
+Plugin 'klen/python-mode'
+"Plugin 'nvie/vim-flake8'
 
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
-Bundle 'mbbill/undotree'
+Plugin 'mbbill/undotree'
 nnoremap <Leader>u :UndotreeToggle<CR>
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 nnoremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeChDirMode=2
 let NERDTreeShowBookmarks=1
@@ -66,16 +68,16 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeDirArrows=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 nnoremap <Leader>s :Errors<CR>
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=1
 let g:syntastic_stl_format='[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers=['pylint']
 
-Bundle 'benmills/vimux'
+Plugin 'benmills/vimux'
 nnoremap <Leader>vp :VimuxPromptCommand<CR>
 vnoremap <Leader>vs "vy :call VimuxRunCommand(@v . "\n", 0)<CR>
 nnoremap <Leader>vx :VimuxClosePanes<CR>
@@ -84,27 +86,24 @@ nnoremap <Leader>vi :VimuxInspectRunner<CR>
 nnoremap <Leader>vl :VimuxRunLastCommand<CR>
 nnoremap <Leader>vc :VimuxClearRunnerHistory<CR>
 
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 let g:tagbar_autofocus=1
 let g:tagbar_expand=1
 let g:tagbar_foldlevel=2
 let g:tagbar_autoshowtag=1
 
-Bundle 'verilog.vim'
-Bundle 'kdurant/verilog-testbench'
+Plugin 'verilog.vim'
+Plugin 'kdurant/verilog-testbench'
 
 ""
-Bundle 'honza/vim-snippets'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
-Bundle 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
-Bundle 'Shougo/neocomplcache'
+Plugin 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_auto_delimiter=1
 let g:neocomplcache_enable_camel_case_completion=1
@@ -130,6 +129,7 @@ if has('conceal')
     set conceallevel=2 concealcursor=i
 endif
 
+call vundle#end()
 
 """"""""""""""""""""""""""""""""
 " General
@@ -137,9 +137,6 @@ endif
 syntax enable
 syntax on
 
-filetype on
-filetype indent on
-filetype plugin on
 filetype plugin indent on
 
 colorscheme solarized
@@ -157,11 +154,10 @@ set showcmd                    " show the command you're running in the status b
 set hidden
 set synmaxcol=999       " Syntax coloring too-long lines is slow
 set fileencoding=utf-8    
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,latin1
 set autoread            " Automatically reload changes if detected
 set autowrite           " Writes on make/shell commands
 set wildmenu
-set iskeyword+=\$,-           " Add extra characters that are valid parts of variables
 set scrolloff=3                " Keep three lines below the last line when scrolling
 set spelllang=en_us     " :set spell to start spell check
 set showmatch
@@ -191,13 +187,6 @@ set hlsearch   "hls, Highlight search results
 set mouse=a    " Mouse in all modes
 set mousemodel=popup
 set clipboard+=unnamed        " Yanks go on clipboard instead.
-
-" auto completion
-"set pumheight=7          " Keep a small completion window
-" Ignore these files when completing
-"set wildignore+=*.o,*.obj,.git,*.pyc
-"set wildignore+=eggs/**
-"set wildignore+=*.egg-info/**
 
 "设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
@@ -232,14 +221,9 @@ nnoremap <silent> g* g*zz
 nnoremap <Leader>O O<Esc>j
 nnoremap <Leader>o o<Esc>k
 
-" Fixes common typos
-command! W w
-command! Q q
-
 "press jk to exit from insert mode
 imap kj <Esc>
 
-let g:netrw_list_hide='.DS_Store,^\.git/$'    " Hide .DS_Store and .git
 
 "####################Xu####################
 
