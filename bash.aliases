@@ -11,6 +11,8 @@ alias cd.2='cd ../..'
 alias cd.3='cd ../../..'
 alias cd.4='cd ../../../..'
 
+alias brewup='brew update; brew upgrade --all; brew cleanup'
+
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 
 # Customize listing format #
