@@ -76,6 +76,7 @@ if   [ $UNAME == 'Linux' ]; then
 
 ## There are some aliases specific for Linux
 	
+	export PATH="$HOME/.linuxbrew/sbin:$PATH"
 	export PATH="$HOME/.linuxbrew/bin:$PATH"
 	export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 	export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"

@@ -1,10 +1,11 @@
 #!/bin/bash
 
 echo "*** This profile is for Cadence ic-5.141 installation"
-echo "*** This installation only includes basic IC and MMSIM functionality"
+echo "*** Keep going and working hard"
 
 # Log of changes
 #
+# 03/07/16 xxx110230 Changed LM_LICENSE_FILE @dmv to @engdmv 
 # 10/30/13 xxx110230 Adding additional FINDER path 
 # 08/10/11 hkt051000 Adding additional AMS paths
 # 05/25/11 hkt051000 Adding QRC 
@@ -20,7 +21,7 @@ echo "*** This installation only includes basic IC and MMSIM functionality"
 #######################################################################
 #export LM_LICENSE_FILE=/home/cad/flexlm/cadence.1
 #export LM_LICENSE_FILE=/net/eeuss1/export/proj_cad/license/cadence.jan2012
-export LM_LICENSE_FILE=5280@dmv:$LM_LICENSE_FILE
+export LM_LICENSE_FILE=5280@engdmv:$LM_LICENSE_FILE
 
 if [ `uname -s` = "SunOS" ]; then
                 export OS=sun4v
