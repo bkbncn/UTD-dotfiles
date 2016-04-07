@@ -30,12 +30,12 @@ alias llf='ls -alh | grep -v "^d"'
 alias llfm='ls -alh | grep -v "^d"|more'
 
 # about source #
-alias pfic5=".  /proj/ndl/home/xxx110230/cad/source/profile.ic-5"
-alias pfsyn='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys'
+alias sfic5=".  ~/.dotfiles/profile.ic-5"
+alias cdsfsyn='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys'
 
 # about application #
-alias runic='cd /proj/ndl/home/xxx110230/cad/cadence/;. /proj/ndl/home/xxx110230/cad/source/profile.ic-5;icfb&'
-alias runit='cd ~/training/ADE_5141;. /proj/ndl/home/xxx110230/cad/source/profile.ic-5;icms&'
+alias runic='cd /proj/ndl/home/xxx110230/cad/cadence/;. ~/.dotfiles/profile.ic-5;icfb&'
+alias runit='cd ~/training/ADE_5141;. ~/.dotfiles/profile.ic-5;icms&'
 alias rundv='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys;design_vision&'
 alias dv="design_vision&"
 alias runhspice='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys;hspice&'
