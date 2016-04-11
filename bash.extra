@@ -1,13 +1,14 @@
-#updated at Nov 1, 2013
+#updated at April 11 2016
 ####################Xiangyu####################
 
-# NDL_HOME=/proj/ndl/home/xxx110230
+# NDLHOME=/proj/ndl/home/xxx110230
 # CDS_INST_DIR=$CDS=$CDSHOME=$CDSROOT 
  
 # cadence lockfile # 
 # clsAdminTool -are .
 # to release all edit locks file by cadence in the current folder
 # clsAdminTool -asre /path/to/the/locked/file
+alias clcds='clsAdminTool -asre $HOME'
 # to release all edit lock on a specific file 
 # or run clsAdminTool to do other cadence lockfile related job
 # find . -name "*.cdslck" -exec rm -f {}

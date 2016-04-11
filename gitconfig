@@ -1,11 +1,8 @@
-[user]
-	name = Xiangyu Xu
-	email = bkbncn@gmail.com
-[color]
-	ui = always
 [core]
 	excludesfile = $HOME/.dotfiles/gitignore_global
 	editor = vim
+[include]
+	path = ~/.dotfiles/gitconfig_local
 [alias]
 	ci = commit 
 	ca = commit -av

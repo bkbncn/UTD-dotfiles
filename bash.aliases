@@ -1,4 +1,4 @@
-#updated at Nov 1, 2013
+#updated at April 11, 2016
 ####################Xiangyu####################
  
 # about system #
@@ -14,6 +14,7 @@ alias cd.4='cd ../../../..'
 alias brewup='brew update; brew upgrade --all; brew cleanup'
 
 alias ndlhome='cd /proj/ndl/home/xxx110230'
+export NDLHOME="$HOME/.linuxbrew/sbin:$PATH"
 
 # Customize listing format #
 alias la='ls -a'
@@ -30,16 +31,16 @@ alias llf='ls -alh | grep -v "^d"'
 alias llfm='ls -alh | grep -v "^d"|more'
 
 # about source #
-alias sfic5=".  ~/.dotfiles/profile.ic-5"
-alias cdsfsyn='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys'
+alias sfic5=".  $HOME/.dotfiles/profile.ic-5"
+alias cdsfsyn='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys'
 
 # about application #
-alias runic='cd /proj/ndl/home/xxx110230/cad/cadence/;. ~/.dotfiles/profile.ic-5;icfb&'
-alias runit='cd ~/training/ADE_5141;. ~/.dotfiles/profile.ic-5;icms&'
-alias rundv='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys;design_vision&'
+alias runic='cd $NDLHOME/cad/cadence/&& . $HOME/.dotfiles/profile.ic-5;icfb&'
+alias runit='cd $HOME/training/ADE_5141&& . $HOME/.dotfiles/profile.ic-5;icms&'
+alias rundv='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys;design_vision&'
 alias dv="design_vision&"
-alias runhspice='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys;hspice&'
-alias runwv='cd /proj/ndl/home/xxx110230/cad/synopsys/;. /proj/cad/startup/profile.synopsys;wv&'
+alias runhspice='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys;hspice&'
+alias runwv='cd $NDLHOME/xxx110230/cad/synopsys/&& . /proj/cad/startup/profile.synopsys;wv&'
 
 ####################Xu####################
 

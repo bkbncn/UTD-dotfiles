@@ -1,4 +1,4 @@
-# Xiangyu updated at Aug 24,2015
+# Xiangyu updated at April 11,2016
 # $Id: .bashrc,v 1.2 1998/05/02 21:42:35 amos Exp $
 # Individual per-interactive-shell startup file
 
@@ -104,7 +104,7 @@ fi
 
 # loading other settings #
 
-for file in ~/.dotfiles/bash.{aliases,extra,functions}; do
+for file in $HOME/.dotfiles/bash.{aliases,extra,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file

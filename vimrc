@@ -1,4 +1,4 @@
-"updated at Aug 24, 2015
+"updated at April 11, 2016
 "####################Xiangyu################
 """"""""""""""""""""""""""""""""
 " Vundle
@@ -6,7 +6,7 @@
 set nocompatible " iMproved
 filetype off     " required!
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
@@ -36,7 +36,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 	
-Plugin 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'fholgado/minibufexpl.vim'
 noremap <leader>bn :MBEbn<CR>
 noremap <leader>bp :MBEbp<CR>
 noremap <leader>bf :MBEbf<CR>
@@ -47,9 +47,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'Lokaltog/vim-easymotion'
 
-Plugin 'ivanov/vim-ipython'
+"Plugin 'ivanov/vim-ipython'
 Plugin 'klen/python-mode'
-"Plugin 'nvie/vim-flake8'
 
 Plugin 'godlygeek/tabular'
 nmap <Leader>a= :Tabularize /=<CR>
@@ -68,7 +67,6 @@ let NERDTreeShowHidden=1
 let NERDTreeShowLineNumbers=1
 let NERDTreeDirArrows=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'scrooloose/syntastic'
 nnoremap <Leader>s :Errors<CR>
@@ -76,15 +74,6 @@ let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=1
 let g:syntastic_stl_format='[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 let g:syntastic_python_checkers=['pylint']
-
-Plugin 'benmills/vimux'
-nnoremap <Leader>vp :VimuxPromptCommand<CR>
-vnoremap <Leader>vs "vy :call VimuxRunCommand(@v . "\n", 0)<CR>
-nnoremap <Leader>vx :VimuxClosePanes<CR>
-nnoremap <Leader>vq :VimuxCloseRunner<CR>
-nnoremap <Leader>vi :VimuxInspectRunner<CR>
-nnoremap <Leader>vl :VimuxRunLastCommand<CR>
-nnoremap <Leader>vc :VimuxClearRunnerHistory<CR>
 
 Plugin 'majutsushi/tagbar'
 nnoremap <silent> <leader>t :TagbarToggle<CR>
@@ -154,14 +143,13 @@ set showcmd                    " show the command you're running in the status b
 set hidden
 set synmaxcol=999       " Syntax coloring too-long lines is slow
 set fileencoding=utf-8    
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,latin1
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5
 set autoread            " Automatically reload changes if detected
 set autowrite           " Writes on make/shell commands
 set wildmenu
 set scrolloff=3                " Keep three lines below the last line when scrolling
 set spelllang=en_us     " :set spell to start spell check
 set showmatch
-set pastetoggle=<F11>
 set foldmethod=indent
 set foldlevel=99
 set ttimeoutlen=40
@@ -181,7 +169,6 @@ set ignorecase "ic, Case insensitive search
 set smartcase  " Non-case sensitive search
 set incsearch  "is, Incremental search, partial match
 set hlsearch   "hls, Highlight search results
-"set nowrapscan 
 
 " Mouse
 set mouse=a    " Mouse in all modes
