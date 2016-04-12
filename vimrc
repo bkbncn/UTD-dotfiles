@@ -206,6 +206,12 @@ nnoremap <Leader>o o<Esc>k
 "press jk to exit from insert mode
 imap kj <Esc>
 
+"Change mapleader
+let mapleader = ","
+let g:mapleader = ","
+
+"Fast saving
+nmap <leader>w :w!<cr>
 
 "####################Xu####################
 
