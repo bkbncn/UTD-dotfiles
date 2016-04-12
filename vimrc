@@ -1,4 +1,4 @@
-"updated at April 11, 2016
+"updated at April 12, 2016
 "####################Xiangyu################
 """"""""""""""""""""""""""""""""
 " Vundle
@@ -13,15 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bkbncn/vim-filetype-detector'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
+"Plugin 'tpope/vim-repeat'
 
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-session'
-let g:session_autosave = 'no'
-Plugin 'xolox/vim-easytags'
-let g:easytags_updatetime_warn = 0
-
-Plugin 'matchit.zip'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
@@ -30,11 +23,16 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 Plugin 'bling/vim-airline'
 
-Plugin 'kien/ctrlp.vim'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_user_command = 'find %s -type f'       
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 	
 Plugin 'fholgado/minibufexpl.vim'
 noremap <leader>bn :MBEbn<CR>
@@ -61,62 +59,59 @@ nnoremap <Leader>u :UndotreeToggle<CR>
 
 Plugin 'scrooloose/nerdtree'
 nnoremap <Leader>n :NERDTreeToggle<CR>
-let NERDTreeChDirMode=2
-let NERDTreeShowBookmarks=1
-let NERDTreeShowHidden=1
-let NERDTreeShowLineNumbers=1
-let NERDTreeDirArrows=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 Plugin 'scrooloose/syntastic'
 nnoremap <Leader>s :Errors<CR>
-let g:syntastic_check_on_open=1
-let g:syntastic_auto_jump=1
-let g:syntastic_stl_format='[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
-let g:syntastic_python_checkers=['pylint']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 Plugin 'majutsushi/tagbar'
 nnoremap <silent> <leader>t :TagbarToggle<CR>
-let g:tagbar_autofocus=1
-let g:tagbar_expand=1
-let g:tagbar_foldlevel=2
-let g:tagbar_autoshowtag=1
 
 Plugin 'verilog.vim'
 Plugin 'kdurant/verilog-testbench'
 
 ""
-Plugin 'honza/vim-snippets'
-
 Plugin 'davidhalter/jedi-vim'
 
 Plugin 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "context"
-Plugin 'Shougo/neocomplcache'
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_auto_delimiter=1
-let g:neocomplcache_enable_camel_case_completion=1
-let g:neocomplcache_enable_underbar_completion=1
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory="$HOME/.vim/bundle/vim-snippets/snippets"
-let g:neosnippet#enable_snipmate_compatibility=1
-" Plugin key-mappings
-imap <C-K> <Plug>(neosnippet_expand_or_jump)
-smap <C-K> <Plug>(neosnippet_expand_or_jump)
-xmap <C-K> <Plug>(neosnippet_expand_target)
-" Map <C-E> to cancel completion
-inoremap <expr><C-E> neocomplcache#cancel_popup()
-" SuperTab like snippets behavior
-inoremap <expr><Tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-N>" : "\<Tab>"
-snoremap <expr><Tab> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<Tab>"
-inoremap <expr><S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
-" CR/S-CR: close popup and save indent
-inoremap <expr><CR> delimitMate#WithinEmptyPair() ? "\<C-R>=delimitMate#ExpandReturn()\<CR>" : pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-inoremap <expr><S-CR> pumvisible() ? neocomplcache#close_popup() "\<CR>" : "\<CR>"
-" For snippet_complete marker
+
+Plugin 'Shougo/neocomplete.vim'
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+" SuperTab like snippets behavior.
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" For conceal markers.
 if has('conceal')
-    set conceallevel=2 concealcursor=i
+  set conceallevel=2 concealcursor=niv
 endif
+
+Plugin 'honza/vim-snippets'
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 call vundle#end()
 
