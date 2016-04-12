@@ -155,7 +155,7 @@ set tabstop=8           " ts
 set shiftwidth=4        " sw 
 set softtabstop=4       " every backspace delete #sts spaces
 set expandtab           " et, enpend TAB to space,Ctrl-V<TAB> to input TAB
-set smarttab            " sta,在行首按TAB将加入sw个空格，否则加入ts个空格
+set smarttab            " sta
 set smartindent         " si
 set backspace=2         " Allow backspacing over autoindent, EOL, and BOL
 
@@ -170,28 +170,6 @@ set mouse=a    " Mouse in all modes
 set mousemodel=popup
 set clipboard+=unnamed        " Yanks go on clipboard instead.
 
-"设置标记一列的背景颜色和数字一行颜色一致
-hi! link SignColumn   LineNr
-hi! link ShowMarksHLl DiffAdd
-hi! link ShowMarksHLu DiffChange
-
-"" for error highlight，防止错误整行标红导致看不清
-highlight clear SpellBad
-highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
-highlight clear SpellCap
-highlight SpellCap term=underline cterm=underline
-highlight clear SpellRare
-highlight SpellRare term=underline cterm=underline
-highlight clear SpellLocal
-highlight SpellLocal term=underline cterm=underline
-
-"上下左右键的行为 会显示其他信息
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"    "回车即选中当前项
-inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
-inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
-inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
-inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
-
 "Keep search pattern at the center of the screen."
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
@@ -205,13 +183,6 @@ nnoremap <Leader>o o<Esc>k
 
 "press jk to exit from insert mode
 imap kj <Esc>
-
-"Change mapleader
-let mapleader = ","
-let g:mapleader = ","
-
-"Fast saving
-nmap <leader>w :w!<cr>
 
 "####################Xu####################
 
