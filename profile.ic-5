@@ -1,7 +1,9 @@
 #!/bin/bash
 
 echo "*** This profile is for Cadence ic-5.141 installation"
+echo "*** This installation only includes basic IC and MMSIM functionality"
 echo "*** Keep going and working hard"
+echo "*** Xiangyu Xu (Xiangyu.Xu@utdallas.edu)"
 
 # Log of changes
 #
