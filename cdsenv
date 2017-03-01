@@ -1,12 +1,20 @@
-layoutOptimize.state	menuState	string	"None"
-;updated at Oct 29, 2013
+;updated at March 1, 2017
 ;####################Xiangyu################
 
 asimenv	showWhatsNew	string	"5.1.0"
 asimenv	saveDir	string	"./.artist_states"
 asimenv.startup	projectDir	string	"./simulation"
 
+ddserv	showWhatsNew	string	"5.1"
+
 graphic	netExprDisplay	string	"value only"
+
+hspiceD.envOpts  modelFiles       string  "/home/cad/kits/IBM_CMRF8SF-LM013/IBM_PDK/cmrf8sf/V1.2.0.0LM/HSPICE/models/model013.lib_inc"
+hspiceD.envOpts  includeSyntax    string  "hspice"
+hspiceD.opts     TNOM             string  "25"
+
+iccTranslator.ExportEditor rulesFile string "/proj/cad/library/mosis/IBM_PDK/cmrf8sf/V1.8.0.4DM/cdslib51/cmrf8sf/cmrf8sfDM32.vcr"
+
 
 layout	gravityType	string	""
 layout	instLibName	string	"cmrf8sf"
@@ -15,18 +23,12 @@ layout	flattenPCells	boolean	t
 layout	gravityAperture	float	3
 layout	showWhatsNew	string	"5.1"
 layout	xSnapSpacing	float	0.01
+layout	ySnapSpacing	float	0.01
 layout	displayRefPoint	boolean	t
 layout	autoSetRefPoint	boolean	nil
-layout	ySnapSpacing	float	0.01
 layoutXL	ciwWindow	string	"((598.0 25.0) (1323.0 186.0))"
 layoutXL	sfactorNames	string	"sc SC"
-
-ui	menuCmdOutput	boolean	t
-ui	textFont	string	"-*-courier-medium-r-*-*-12-*"
-ui	promptInput	boolean	t
-ui	menuCmdInput	boolean	t
-
-ddserv	showWhatsNew	string	"5.1"
+layoutOptimize.state	menuState	string	"None"
 
 spectre.envOpts	enableArclength	boolean	nil
 spectre.envOpts	firstRun	boolean	nil
@@ -34,9 +36,10 @@ spectre.envOpts  includePath  string "/home/cad/kits/IBM_CMRF8SF-LM013/IBM_PDK/c
 spectre.envOpts  modelFiles   string "/home/cad/kits/IBM_CMRF8SF-LM013/IBM_PDK/cmrf8sf/V1.2.1.2LM/Spectre/models/allModels.scs"
 spectre.opts	tnom	string	"25"
 
-hspiceD.envOpts  modelFiles       string  "/home/cad/kits/IBM_CMRF8SF-LM013/IBM_PDK/cmrf8sf/V1.2.0.0LM/HSPICE/models/model013.lib_inc"
-hspiceD.envOpts  includeSyntax    string  "hspice"
-hspiceD.opts     TNOM             string  "25"
+ui	menuCmdOutput	boolean	t
+ui	textFont	string	"-*-courier-medium-r-*-*-12-*"
+ui	promptInput	boolean	t
+ui	menuCmdInput	boolean	t
 
 wavescan.trace lineThickness string "Bold" | "fine" | "medium"
 wavescan.trace lineStyle string "Solid" | "dashed" | "dotted" 

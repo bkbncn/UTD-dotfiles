@@ -1,4 +1,4 @@
-"updated at April 12, 2016
+"updated at March 1, 2017
 "####################Xiangyu################
 """"""""""""""""""""""""""""""""
 " Vundle
@@ -9,22 +9,23 @@ filetype off     " required!
 set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bkbncn/vim-filetype-detector'
-Plugin 'tpope/vim-surround'
-"Plugin 'tpope/vim-repeat'
 
-Plugin 'tpope/vim-fugitive'
+Plugin 'bkbncn/vim-filetype-detector'
+
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 Plugin 'Raimondi/delimitMate'
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='solarized'
 
 Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -33,33 +34,40 @@ let g:ctrlp_custom_ignore = {
   \ }
 let g:ctrlp_user_command = 'find %s -type f'       
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-	
-Plugin 'fholgado/minibufexpl.vim'
-noremap <leader>bn :MBEbn<CR>
-noremap <leader>bp :MBEbp<CR>
-noremap <leader>bf :MBEbf<CR>
-noremap <leader>bb :MBEbb<CR>
-noremap <leader>bd :MBEbd<CR>
-
-Plugin 'nathanaelkane/vim-indent-guides'
+nnoremap <Leader>p :CtrlP<cr>
+nnoremap <Leader>bb :CtrlPBuffer<cr>
+nnoremap <Leader>bm :CtrlPMixed<cr>
+nnoremap <Leader>bs :CtrlPMRU<cr>
 
 Plugin 'Lokaltog/vim-easymotion'
 
-"Plugin 'ivanov/vim-ipython'
 Plugin 'klen/python-mode'
 
-Plugin 'godlygeek/tabular'
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
+Plugin 'nathanaelkane/vim-indent-guides'
+"Plugin 'godlygeek/tabular'
+"nmap <Leader>a= :Tabularize /=<CR>
+"vmap <Leader>a= :Tabularize /=<CR>
+"nmap <Leader>a: :Tabularize /:\zs<CR>
+"vmap <Leader>a: :Tabularize /:\zs<CR>
+Plugin 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xnoremap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nnoremap ga <Plug>(EasyAlign)
 
 Plugin 'mbbill/undotree'
 nnoremap <Leader>u :UndotreeToggle<CR>
 
 Plugin 'scrooloose/nerdtree'
 nnoremap <Leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+"close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"open NERDTree automatically when vim starts up on opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'scrooloose/syntastic'
 nnoremap <Leader>s :Errors<CR>
@@ -70,6 +78,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers=['pyflakes']
 
 Plugin 'majutsushi/tagbar'
 nnoremap <silent> <leader>t :TagbarToggle<CR>
@@ -161,7 +170,7 @@ set backspace=2         " Allow backspacing over autoindent, EOL, and BOL
 
 " Searching
 set ignorecase "ic, Case insensitive search
-set smartcase  " Non-case sensitive search
+set smartcase  "Non-case sensitive search
 set incsearch  "is, Incremental search, partial match
 set hlsearch   "hls, Highlight search results
 
@@ -184,5 +193,10 @@ nnoremap <Leader>o o<Esc>k
 "press jk to exit from insert mode
 imap kj <Esc>
 
+" Change mapleader
+nmap <Space> <Leader>
+
+" Fast saving
+nnoremap <Leader>w :w!<cr>
 "####################Xu####################
 

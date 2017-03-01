@@ -1,4 +1,4 @@
-;updated at Oct 29, 2013
+;updated at March 1, 2017
 ;####################Xiangyu################
 ;
 ;################################################
@@ -96,7 +96,7 @@ hiGetCIWindow()->displayMouseBinding = t
 hiSetUndoLimit(10)                                /* Allow 10 undos          */
 hiSetMultiClickTime(500)                          /* Set double click=500    */
 hiFormApply( hiSysProps )
-
+envLoadFile ".cdsenv"
 ;END OF USER CUSTOMIZATION
 ;####################Xu####################
 
