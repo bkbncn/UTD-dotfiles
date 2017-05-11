@@ -76,7 +76,6 @@ if   [ $UNAME == 'Linux' ]; then
 
 ## There are some aliases specific for Linux
 	
-	export PATH="$HOME/.linuxbrew/sbin:$PATH"
 	export PATH="$HOME/.linuxbrew/bin:$PATH"
 	export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 	export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
@@ -86,7 +85,7 @@ if   [ $UNAME == 'Linux' ]; then
 	alias rm='rm -I'
 	alias ssh="ssh -Y"
 	alias grep='grep --color=auto'
-	alias v='vim'
+	alias v='~/vim8.0.0596/bin/vim'
 
 #  end for Linux
 

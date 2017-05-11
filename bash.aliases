@@ -2,6 +2,7 @@
 ###############Xiangyu#################### 
 # about system # 
 alias g='gedit' 
+alias st='~/sublime_text/sublime_text' 
 alias cd-='cd -'
 alias ..='cd ..'
 alias cd..='cd ..'
@@ -36,9 +37,10 @@ alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
 
 
 # about application #
+alias rungf65='cd $HOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
 alias runic='cd $NDLHOME/cad/cadence/&& . $HOME/.dotfiles/profile.ic-5;icfb&'
 alias runicta='cd ~/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
-alias runit='cd $HOME/training/ADE_5141&& . $HOME/.dotfiles/profile.ic-5;icms&'
+alias runit='cd $HOME/training/ADE_5141/&& . $HOME/.dotfiles/profile.ic-5;icms&'
 alias rundv='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
 alias rundvta='cd ~/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
 alias dv="design_vision&"
