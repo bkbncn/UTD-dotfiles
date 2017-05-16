@@ -1,17 +1,16 @@
-"updated at March 1, 2017
+"Xiangyu updated at May 15, 2017
 """"""""""""""""""""""""""""""""
 " Vundle
 """"""""""""""""""""""""""""""""
-set nocompatible " iMproved
-filetype off     " required!
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 
-"Plugin 'bkbncn/vim-filetype-detector'
-"Plugin 'bkbncn/c.vim'
+Plugin 'bkbncn/vim-filetype'
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -19,7 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'Raimondi/delimitMate'
 au FileType python let b:delimitMate_nesting_quotes = ['"']
-"Plugin 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -33,8 +32,8 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_user_command = ['find %s -type f','.git', 'cd %s && git ls-files -co --exclude-standard']
+  \ }      
+let g:ctrlp_user_command = ['find %s -type f', '.git', 'cd %s && git ls-files -co --exclude-standard']
 nnoremap <Leader>p :CtrlP<cr>
 nnoremap <Leader>bb :CtrlPBuffer<cr>
 nnoremap <Leader>bm :CtrlPMixed<cr>
@@ -89,9 +88,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers=['pyflakes']
 
-"Plugin 'nachumk/systemverilog.vim'
-"Plugin 'kdurant/verilog-testbench'
-
 Plugin 'majutsushi/tagbar'
 nnoremap <Leader>t :TagbarToggle<CR>
 
@@ -107,10 +103,6 @@ let g:ycm_global_ycm_extra_conf = "~/.dotfiles/ycm_extra_conf.py"
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
 nnoremap <Leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <Leader>jf :YcmCompleter GoToDefinition<CR>
-
-"Plugin 'sheerun/vim-polyglot'
-"Plugin 'chrisbra/csv.vim'
-"Plugin 'thinca/vim-quickrun'
 
 call vundle#end()
 
@@ -128,8 +120,8 @@ colorscheme solarized
 set number
 set ruler
 set cursorline          " Highlight current line
-set laststatus=2       	" Always show the statusline
-set showcmd    	        " show the command you're running in the status bar
+set laststatus=2        " Always show the statusline
+set showcmd             " show the command you're running in the status bar
 set hidden
 set synmaxcol=999       " Syntax coloring too-long lines is slow
 set encoding=utf-8 nobomb
@@ -138,13 +130,13 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set autoread            " Automatically reload changes if detected
 set autowrite           " Writes on make/shell commands
 set wildmenu
-set scrolloff=3        	" Keep three lines below the last line when scrolling
+set scrolloff=3         " Keep three lines below the last line when scrolling
 set spelllang=en_us     " :set spell to start spell check
 set showmatch           " brackets
 set foldmethod=syntax
 set nofoldenable
 set foldlevel=99
-set noswapfile			" no swap files
+set noswapfile      " no swap files
 
 " Indentation
 set autoindent

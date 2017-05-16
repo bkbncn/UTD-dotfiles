@@ -1,12 +1,14 @@
-#updated at March 1, 2017 #############
+##updated at May 16, 2017
 ###############Xiangyu#################### 
 # about system # 
 alias g='gedit' 
 alias st='~/sublime_text/sublime_text' 
 alias cd-='cd -'
-alias ..='cd ..'
 alias cd..='cd ..'
+alias ..='cd ..'
 alias cd.2='cd ../..'
+alias ...='cd ../..'
+alias .2='cd ../..'
 
 alias brewup='brew update; brew upgrade; brew cleanup'
 

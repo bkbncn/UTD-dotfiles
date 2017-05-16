@@ -1,4 +1,4 @@
-# Xiangyu updated at April 11,2016
+# Xiangyu updated at May 16, 2017
 # $Id: .bashrc,v 1.2 1998/05/02 21:42:35 amos Exp $
 # Individual per-interactive-shell startup file
 
@@ -95,7 +95,7 @@ if   [ $UNAME == 'Linux' ]; then
 
 	alias rm='rm -i'
 	alias ssh="ssh -X"
-	alias v="vim -u "$HOME/.dotfiles/vimrc.SunOS""
+	alias v="vim -u "$HOME/.dotfiles/SunOS.vimrc""
 
 # end for SunOS
 
@@ -103,7 +103,7 @@ fi
 
 # loading other settings #
 
-for file in $HOME/.dotfiles/bash.{aliases,extra,functions}; do
+for file in $HOME/.dotfiles/{aliases,extra,functions}.bash; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
