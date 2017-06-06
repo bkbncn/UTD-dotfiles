@@ -1,4 +1,4 @@
-# Xiangyu updated at May 16, 2017
+# Xiangyu updated at Jun 06, 2017
 # $Id: .bashrc,v 1.2 1998/05/02 21:42:35 amos Exp $
 # Individual per-interactive-shell startup file
 
@@ -77,6 +77,7 @@ if   [ $UNAME == 'Linux' ]; then
 ## There are some aliases specific for Linux
 	
 	export PATH="$HOME/.linuxbrew/bin:$PATH"
+	export PATH="$HOME/.linuxbrew/sbin:$PATH"
 	export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 	export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 	[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
@@ -85,7 +86,7 @@ if   [ $UNAME == 'Linux' ]; then
 	alias rm='rm -I'
 	alias ssh="ssh -Y"
 	alias grep='grep --color=auto'
-	alias v='~/vim8.0.0596/bin/vim'
+	alias v='~/vim/bin/vim'
 
 #  end for Linux
 

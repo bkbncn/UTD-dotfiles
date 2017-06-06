@@ -18,9 +18,7 @@ alias clcds='clsAdminTool -asre $HOME'
 #'nautilus .' open in finder
 alias open='nautilus'
 #'ps2pdf' can convert .pf file to .pdf file
-#'dos2unix' - DOS to UNIX and vice versa text file format converter
 #'soffice' - LibreOffice suites
 #'evince' - view .pdf, perferred
-#'epdfview' - view .pdf
 ####################Xu####################
 
