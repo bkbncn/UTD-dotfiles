@@ -1,20 +1,23 @@
 [core]
-	excludesfile = $HOME/.dotfiles/gitignore_global
 	editor = vim
 [include]
 	path = ~/.dotfiles/gitconfig_local
 [alias]
-	ci = commit 
+	ci = commit -v
 	ca = commit -av
 	co = checkout
-	cm = checkout master
 	br = branch
-	lg = log --stat --max-count=5
 	st = status
+	lg = log --stat --max-count=5
+	unstage = reset HEAD
+	unci = reset HEAD~
+	reci = commit -c ORIG_HEAD
 	throw = reset --hard HEAD
-	throwh = reset --hard HEAD^
+	throwh = reset --hard HEAD~
+	pullup = pull --rebase origin master
 [color]
 	ui = true
+[commit]
+	template = ~/.dotfiles/gitmessage
 [push]
 	default = current
-

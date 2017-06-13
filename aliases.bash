@@ -1,7 +1,8 @@
-##updated at May 19, 2017
+##updated at June 13, 2017
 ###############Xiangyu#################### 
 # about system # 
-alias g='gedit' 
+alias g='git' 
+alias n='nedit' 
 alias st='~/sublime_text/sublime_text' 
 alias cd-='cd -'
 alias cd..='cd ..'
