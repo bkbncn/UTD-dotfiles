@@ -1,4 +1,4 @@
-##updated at June 13, 2017
+##updated at July 07, 2017
 ###############Xiangyu#################### 
 # about system # 
 alias g='git' 
