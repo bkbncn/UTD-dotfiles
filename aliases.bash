@@ -39,6 +39,7 @@ alias cadlk="clsAdminTool -are ."
 alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
 
 # about application #
+alias pygf65='cd $HOME/cad/gf65/&& . ~/PyLayout/technology/gf65/PyLayout.sh'
 alias rungf65='cd $HOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
 alias runic='cd $NDLHOME/cad/cadence/&& . $HOME/.dotfiles/profile.ic-5;icfb&'
 alias runic5ta='cd $HOME/cad/cadence/&& . $HOME/.dotfiles/profile.ic-5;icfb&'
