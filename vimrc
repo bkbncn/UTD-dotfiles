@@ -1,4 +1,4 @@
-"Xiangyu updated at May 15, 2017
+"Xiangyu updated at Aug 14, 2017
 """"""""""""""""""""""""""""""""
 " Vundle
 """"""""""""""""""""""""""""""""
@@ -49,6 +49,10 @@ Plugin 'matze/vim-move'
 let g:move_key_modifier = 'C'
 
 Plugin 'python-mode/python-mode'
+let g:pymode_rope = 0
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_autoimport = 0
 
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'godlygeek/tabular'
