@@ -1,4 +1,4 @@
-##updated at July 07, 2017
+##updated at Auguest 22, 2017
 ###############Xiangyu#################### 
 # about system # 
 alias g='git' 
@@ -15,6 +15,8 @@ alias brewup='brew update; brew upgrade; brew cleanup'
 
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 export NDLHOME=/proj/ndl/home/xxx110230
+
+alias webup='cd ~/vlsi;git pullup; mkdocs build; yes| cp -R ~/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
 
 # Customize listing format #
 alias la='ls -a'
@@ -41,8 +43,8 @@ alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
 # about application #
 alias pygf65='cd $HOME/cad/gf65/&& . ~/PyLayout/technology/gf65/PyLayout.sh'
 alias rungf65='cd $HOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
-alias runic='cd $NDLHOME/cad/cadence/&& . $HOME/.dotfiles/profile.ic-5;icfb&'
-alias runic5ta='cd $HOME/cad/cadence/&& . $HOME/.dotfiles/profile.ic-5;icfb&'
+alias runic5='cd $NDLHOME/cad/cadence/&& . $HOME/.dotfiles/profile.ic-5;icfb&'
+alias runic5ta='cd $HOME/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
 alias runit='cd $HOME/training/ADE_5141/&& . $HOME/.dotfiles/profile.ic-5;icms&'
 alias rundv='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
 alias dv="design_vision&"
