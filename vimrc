@@ -1,4 +1,4 @@
-"Xiangyu updated at Aug 14, 2017
+"Xiangyu updated at Aug 22, 2017
 """"""""""""""""""""""""""""""""
 " Vundle
 """"""""""""""""""""""""""""""""
@@ -164,6 +164,9 @@ set smartcase           " Non-case sensitive search
 set mouse+=a            " Mouse in all modes
 set mousemodel=popup
 set clipboard+=unnamed  "Yanks go on clipboard instead." 
+
+" fix backspace not working in insert mode
+set backspace=2
 
 " Change mapleader
 "let mapleader = ","
