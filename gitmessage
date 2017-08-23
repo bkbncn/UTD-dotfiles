@@ -8,7 +8,7 @@
 #Style     (formatting, missing semi colons, etc; no code change)
 #Docs      (changes to documentation)
 #Test      (adding or refactoring tests; no production code change)
-    
+
 # Why:
 
 # How:

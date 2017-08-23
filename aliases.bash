@@ -1,4 +1,4 @@
-##updated at Auguest 22, 2017
+##updated at Auguest 23, 2017
 ###############Xiangyu#################### 
 # about system # 
 alias g='git' 
@@ -18,6 +18,9 @@ export NDLHOME=/proj/ndl/home/xxx110230
 
 alias webup='cd ~/vlsi;git pullup; mkdocs build; yes| cp -R ~/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
 
+alias dush='du -sh'
+alias dusk='du -sk * .??* | sort -nr'
+
 # Customize listing format #
 alias la='ls -a'
 alias ll='ls -aFlh'
@@ -33,8 +36,8 @@ alias llf='ls -alh | grep -v "^d"'
 alias llfm='ls -alh | grep -v "^d"|more'
 
 # about source #
-alias sfic5=".  $HOME/.dotfiles/profile.ic-5"
-alias sfic5ta=".  /proj/cad/startup/profile.ic-5"
+alias sfic5=".  /proj/cad/startup/profile.ic-5"
+alias sfic6=".  /proj/cad/startup/profile.ee7325"
 alias sfsyn=".  /proj/cad/startup/profile.synopsys_2016"
 
 alias cadlk="clsAdminTool -are ."
@@ -42,10 +45,9 @@ alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
 
 # about application #
 alias pygf65='cd $HOME/cad/gf65/&& . ~/PyLayout/technology/gf65/PyLayout.sh'
-alias rungf65='cd $HOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
-alias runic5='cd $NDLHOME/cad/cadence/&& . $HOME/.dotfiles/profile.ic-5;icfb&'
-alias runic5ta='cd $HOME/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
-alias runit='cd $HOME/training/ADE_5141/&& . $HOME/.dotfiles/profile.ic-5;icms&'
+alias rungf65='cd $NDLHOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
+alias runic='cd $HOME/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
+alias runit='cd $HOME/training/ADE_5141/&& . /proj/cad/startup/profile.ic-5;icms&'
 alias rundv='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
 alias dv="design_vision&"
 alias dvuser='/proj/cad/synopsys/synopsys_lm_linux_scl-11.12/linux64/bin/lmstat -f Design-Vision -c /home/cad/flexlm/synopsys.lic | grep -P "\s{4}\w{3}\d{6}"'
