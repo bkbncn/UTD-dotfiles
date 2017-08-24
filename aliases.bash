@@ -16,7 +16,7 @@ alias brewup='brew update; brew upgrade; brew cleanup'
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 export NDLHOME=/proj/ndl/home/xxx110230
 
-alias webup='cd ~/vlsi;git pullup; mkdocs build; yes| cp -R ~/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
+alias webup='cd $NDLHOME/vlsi;git pullup; mkdocs build; yes| cp -R $NDLHOME/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
 
 alias dush='du -sh'
 alias dusk='du -sk * .??* | sort -nr'
@@ -44,10 +44,10 @@ alias cadlk="clsAdminTool -are ."
 alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
 
 # about application #
-alias pygf65='cd $HOME/cad/gf65/&& . ~/PyLayout/technology/gf65/PyLayout.sh'
+alias pygf65='cd ~/PyLayout/scripts&& . ../technology/gf65/PyLayout.sh'
 alias rungf65='cd $NDLHOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
 alias runic='cd $HOME/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
-alias runit='cd $HOME/training/ADE_5141/&& . /proj/cad/startup/profile.ic-5;icms&'
+alias runit='cd $NDLHOME/training/ADE_5141/&& . /proj/cad/startup/profile.ic-5;icms&'
 alias rundv='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
 alias dv="design_vision&"
 alias dvuser='/proj/cad/synopsys/synopsys_lm_linux_scl-11.12/linux64/bin/lmstat -f Design-Vision -c /home/cad/flexlm/synopsys.lic | grep -P "\s{4}\w{3}\d{6}"'

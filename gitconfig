@@ -1,5 +1,5 @@
 [core]
-	editor = ~/vim/bin/vim
+	editor = $NDLHOME/vim/bin/vim
 [include]
 	path = ~/.dotfiles/gitconfig_local
 [alias]
