@@ -1,4 +1,4 @@
-##updated at Auguest 23, 2017
+##updated at Sep 08, 2017
 ###############Xiangyu#################### 
 # about system # 
 alias g='git' 
@@ -46,14 +46,14 @@ alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
 # about application #
 alias pygf65='cd ~/PyLayout/scripts&& . ../technology/gf65/PyLayout.sh'
 alias rungf65='cd $NDLHOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
-alias runic='cd $HOME/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
+alias runic5='cd $HOME/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
 alias runit='cd $NDLHOME/training/ADE_5141/&& . /proj/cad/startup/profile.ic-5;icms&'
-alias rundv='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
+alias rundv='cd $HOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
 alias dv="design_vision&"
 alias dvuser='/proj/cad/synopsys/synopsys_lm_linux_scl-11.12/linux64/bin/lmstat -f Design-Vision -c /home/cad/flexlm/synopsys.lic | grep -P "\s{4}\w{3}\d{6}"'
 alias dvkill='pkill -u `id | cut -c 5-10` -f design_vision'
-alias runhspice='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;hspice&'
-alias runwv='cd $NDLHOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;wv&'
+alias runhspice='cd $HOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;hspice&'
+alias runwv='cd $HOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;wv&'
 alias runpc='cd $HOME/PyCell/quickstart; source ./bashrc; pyros&'
 ####################Xu####################
 
