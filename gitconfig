@@ -1,5 +1,6 @@
 [core]
 	editor = $NDLHOME/vim/bin/vim
+	excludesfile= ~/.dotfiles/gitignore_global
 [include]
 	path = ~/.dotfiles/gitconfig_local
 [alias]

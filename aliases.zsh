@@ -1,17 +1,19 @@
-##updated at Sep 15, 2017
+##updated at Sep 16, 2017
 ###############Xiangyu#################### 
-# about system # 
-alias g='git' 
+
+## about system ##
+alias v='$NDLHOME/vim/bin/vim'
+alias st='~/sublime_text/sublime_text'
 alias n='nedit' 
-alias st='~/sublime_text/sublime_text' 
+alias mv='mv -i'
+alias rm='rm -I'
+alias ssh='ssh -Y'
+alias grep='grep --color=auto'
+
 alias cd-='cd -'
 alias cd..='cd ..'
-alias ..='cd ..'
-alias cd.2='cd ../..'
-alias ...='cd ../..'
-alias .2='cd ../..'
 
-alias brewup='brew update; brew upgrade; brew cleanup'
+alias brewup='bubu; upgrade_oh_my_zsh; pyenv update'
 
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 
@@ -21,18 +23,66 @@ alias dush='du -sh'
 alias dusk='du -sk * .??* | sort -nr'
 
 # Customize listing format #
-alias la='ls -a'
-alias ll='ls -aFlh'
-alias llm='ll | more'
-alias ls.='ls -d .*' 
-alias lsd='ls -lh | grep "^d"'	
-alias lsdm='ls -lh | grep "^d" | more' 
+alias la='ls -AFhl'
+alias ll='ls -aFhl'
+alias lt='ls -Flht'   #sorted by date
+alias lr='ls -FhlR'   #recursive
+alias lsdot='ls -ld .*'
+alias lsd='ls -lh | grep "^d"'
 alias lsf='ls -lh | grep -v "^d"'
-alias lsfm='ls -lh | grep -v "^d"| more'
-alias lld='ls -alh | grep "^d" | egrep -v " \.+$"'	
-alias lldm='ls -alh | grep "^d" | egrep -v " \.+$" | more' 
+alias lld='ls -alh | grep "^d" | egrep -v " \.+$"'
 alias llf='ls -alh | grep -v "^d"'
-alias llfm='ls -alh | grep -v "^d"|more'
+
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+#'nautilus .' open in finder
+alias open='nautilus'
+
+# Common alias
+alias dush='du -sh'
+alias dusk='du -sk * .??* | sort -nr'
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias p='ps -f'
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
+
+## suffix aliases
+#
+alias -s txt='vim'
+alias -s zip='unzip -l'
+alias -s rar="unrar l"
+alias -s tgz='tar -xzvf'
+alias -s tar="tar tf"
+alias -s gz='tar -xzvf'
+alias -s bz2='tar -xjvf'
+
+## Command line head / tail shortcuts
+alias -g CA="2>&1 | cat -A"
+alias -g G='| grep'
+alias -g EG='|& egrep'
+alias -g H='| head'
+alias -g HL='|& head -20'
+alias -g T='| tail'
+alias -g TL='| tail -20'
+alias -g L='| less'
+alias -g LL="2>&1 | less"
+alias -g LS='| less -S'
+alias -g MM='| most'
+alias -g M='| more'
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g PIPE='|'
+alias -g S='| sort'
+alias -g NS='| sort -n'
+alias -g US='| sort -u'
+alias -g RNS='| sort -nr'
+alias -g X='| xargs'
+
+alias -g X0G='| xargs -0 egrep'
+alias -g X0='| xargs -0'
+alias -g XG='| xargs egrep'
 
 # about source #
 alias sfic5=".  /proj/cad/startup/profile.ic-5"

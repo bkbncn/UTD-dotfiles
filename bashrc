@@ -1,4 +1,4 @@
-# Xiangyu updated at Aug 28, 2017
+# Xiangyu updated at Sep 15, 2017
 # $Id: .bashrc,v 1.2 1998/05/02 21:42:35 amos Exp $
 # Individual per-interactive-shell startup file
 
@@ -67,6 +67,7 @@ fi 	# Finish processing interactive shell functions
 ####################Xiangyu####################
 
 export PATH=$PATH:/bin
+export NDLHOME=/proj/ndl/home/xxx110230
 
 # OS-specific settings #
 
@@ -76,13 +77,14 @@ if   [ $UNAME == 'Linux' ]; then
 
 ## There are some aliases specific for Linux
 	
-	export PATH="/proj/ndl/home/xxx110230/linuxbrew/bin:$PATH"
-	export PATH="/proj/ndl/home/xxx110230/linuxbrew/sbin:$PATH"
+	export PATH="/proj/ndl/home/xxx110230/linuxbrew/bin:/proj/ndl/home/xxx110230/linuxbrew/sbin:$PATH"
+	#export PATH="/proj/ndl/home/xxx110230/linuxbrew/sbin:$PATH"
 	export MANPATH="/proj/ndl/home/xxx110230/linuxbrew/share/man:$MANPATH"
 	export INFOPATH="/proj/ndl/home/xxx110230/linuxbrew/share/info:$INFOPATH"
 	[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
 	export LS_OPTIONS=--color=auto
+	export SHELL=`which zsh`
+	[ -z "$ZSH_VERSION" ] && exec "$SHELL" -l
 	alias rm='rm -I'
 	alias ssh="ssh -Y"
 	alias grep='grep --color=auto'
