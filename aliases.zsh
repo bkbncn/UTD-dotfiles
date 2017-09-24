@@ -1,4 +1,4 @@
-##updated at Sep 16, 2017
+##updated at Sep 26, 2017
 ###############Xiangyu#################### 
 
 ## about system ##
@@ -14,10 +14,11 @@ alias cd-='cd -'
 alias cd..='cd ..'
 
 alias brewup='bubu; upgrade_oh_my_zsh; pyenv update'
+alias pipup='pip list -ol --format=freeze | grep -v "^(\-e|#)" | cut -d = -f 1 | xargs -n1 pip install -U'
 
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 
-alias webup='cd $NDLHOME/vlsi;git pullup; mkdocs build; yes| cp -R $NDLHOME/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
+alias webup='cd $NDLHOME/vlsi;git pullup; pipup; mkdocs build; yes| cp -R $NDLHOME/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
 
 alias dush='du -sh'
 alias dusk='du -sk * .??* | sort -nr'
@@ -38,6 +39,9 @@ alias ff='find . -type f -name'
 
 #'nautilus .' open in finder
 alias open='nautilus'
+
+# 'gnome-terminal --tab' open a new tab, ctrl+shift+t
+alias tab='gnome-terminal --tab'
 
 # Common alias
 alias dush='du -sh'
@@ -91,6 +95,9 @@ alias sfsyn=".  /proj/cad/startup/profile.synopsys_2016"
 
 alias cadlk="clsAdminTool -are ."
 alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
+
+alias gdsrd="calibredrv -m"
+alias gdsread=".  /proj/cad/startup/profile.mentor_gf65; calibredrv -m"
 
 # about application #
 alias pygf65='cd ~/PyLayout/scripts&& . ../technology/gf65/PyLayout.sh'

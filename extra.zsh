@@ -1,4 +1,4 @@
-## updated Aug 31, 2017
+## updated Sep 24, 2017
 ####################Xiangyu####################
 todo() {
     if [[ "$*" == "" ]] ; then
@@ -28,7 +28,7 @@ lgr() {
     fi
 }
 
-#extract () {
+#extract() {
 #   if [ -f $1 ] ;
 #   then
 #       case $1 in
@@ -49,4 +49,16 @@ lgr() {
 #       echo "'$1' is not a valid file"
 #   fi
 #}
-###
+
+topcell() {
+calibredrv -a puts \[layout peek $1 -topcells\]; 
+}
+
+cells() {
+calibredrv -a puts \[layout peek $1 -cells\]; 
+}
+
+layers() {
+calibredrv -a puts \[layout peek $1 -layers\]; 
+}
+###Xu###
