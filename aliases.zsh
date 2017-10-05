@@ -102,14 +102,15 @@ alias gdsread=".  /proj/cad/startup/profile.mentor_gf65; calibredrv -m"
 # about application #
 alias pygf65='cd ~/PyLayout/scripts&& . ../technology/gf65/PyLayout.sh'
 alias rungf65='cd $NDLHOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
+alias rungf55='cd $NDLHOME/cad/gf55/&& . /proj/cad/startup/profile.ic-6.16; . /proj/cad/startup/profile.mentor_2013; export TECHDIR=/proj/cad/library/mosis/GF55_LPe/cmos10lpe_CDS_oa_dl064_12_20160805/Calibre; export BEOL_STACK=6_00_02_00_LB; export IOTYPE=INLINE; export DESIGN_TYPE=CELL; virtuoso&'
 alias runic5='cd $HOME/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
 alias runit='cd $NDLHOME/training/ADE_5141/&& . /proj/cad/startup/profile.ic-5;icms&'
 alias rundv='cd $HOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
 alias dv="design_vision&"
 alias dvuser='/proj/cad/synopsys/synopsys_lmgrd_linux_scl-11.12/linux64/bin/lmstat -f Design-Vision | grep -P "\s{4}\w{3}\d{6}"'
 alias dvkill='pkill -u `id | cut -c 5-10` -f design_vision'
-alias runhspice='cd $HOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;hspice&'
-alias runwv='cd $HOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;wv&'
-alias runpc='cd $HOME/PyCell/quickstart; source ./bashrc; pyros&'
+alias runhspice='cd $HOME/cad/spice/&& . /proj/cad/startup/profile.synopsys_2016;hspice&'
+alias runwv='cd $HOME/cad/spice/&& . /proj/cad/startup/profile.synopsys_2016;wv&'
+alias runpc='cd $HOME/PyCell/quickstart&& source ./bashrc; pyros&'
 ####################Xu####################
 

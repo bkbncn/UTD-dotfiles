@@ -106,4 +106,3 @@ source /proj/ndl/home/xxx110230/linuxbrew/share/zsh-autosuggestions/zsh-autosugg
 
 # Zsh-syntax-highlighting setup
 source /proj/ndl/home/xxx110230/linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
