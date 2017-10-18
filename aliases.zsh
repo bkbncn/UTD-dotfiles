@@ -1,9 +1,9 @@
-##updated at Sep 26, 2017
+##updated at Oct 17, 2017
 ###############Xiangyu#################### 
 
 ## about system ##
 alias v='$NDLHOME/vim/bin/vim'
-alias st='~/sublime_text/sublime_text'
+alias st='$HOME/sublime_text/sublime_text'
 alias n='nedit' 
 alias mv='mv -i'
 alias rm='rm -I'

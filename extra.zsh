@@ -1,4 +1,4 @@
-## updated Sep 24, 2017
+## updated Oct 17, 2017
 ####################Xiangyu####################
 todo() {
     if [[ "$*" == "" ]] ; then
@@ -50,15 +50,4 @@ lgr() {
 #   fi
 #}
 
-topcell() {
-calibredrv -a puts \[layout peek $1 -topcells\]; 
-}
-
-cells() {
-calibredrv -a puts \[layout peek $1 -cells\]; 
-}
-
-layers() {
-calibredrv -a puts \[layout peek $1 -layers\]; 
-}
 ###Xu###

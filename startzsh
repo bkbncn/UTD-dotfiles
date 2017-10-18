@@ -75,17 +75,9 @@ export INFOPATH="/proj/ndl/home/xxx110230/linuxbrew/share/info:$INFOPATH"
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 export LS_OPTIONS=--color=auto
 
-alias rm='rm -I'
-alias ssh="ssh -Y"
-alias grep='grep --color=auto'
-alias v='$NDLHOME/vim/bin/vim'
-
-# load other settings #
-
-for file in $HOME/.dotfiles/{aliases,extra,functions}.bash; do
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
-done
-unset file
+#sh -c "$HOME/.dotfiles/startzsh"
+export SHELL=`which zsh`
+[ -z "$ZSH_VERSION" ] && exec "$SHELL" -l
 
 ####################Xu####################
 

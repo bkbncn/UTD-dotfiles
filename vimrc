@@ -163,7 +163,8 @@ set smartcase           " Non-case sensitive search
 " Mouse
 set mouse+=a            " Mouse in all modes
 set mousemodel=popup
-set clipboard+=unnamed  "Yanks go on clipboard instead." 
+"set clipboard+=unnamed  "Yanks go on clipboard instead." 
+set clipboard=unnamedplus
 
 " fix backspace not working in insert mode
 set backspace=2

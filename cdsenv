@@ -19,14 +19,14 @@ iccTranslator.ExportEditor rulesFile string "/proj/cad/library/mosis/IBM_PDK/cmr
 layout	gravityType	string	""
 layout	instLibName	string	"cmrf8sf"
 layout	gravityDepth	int	20
-layout	flattenPCells	boolean	t
+;layout	flattenPCells	boolean	t
 layout	gravityAperture	float	3
 layout	showWhatsNew	string	"5.1"
 layout	xSnapSpacing	float	0.01
 layout	ySnapSpacing	float	0.01
-layout	displayRefPoint	boolean	t
-layout	autoSetRefPoint	boolean	nil
-layoutXL	ciwWindow	string	"((598.0 25.0) (1323.0 186.0))"
+;layout	displayRefPoint	boolean	t
+;layout	autoSetRefPoint	boolean	nil
+;layoutXL	ciwWindow	string	"((598.0 25.0) (1323.0 186.0))"
 layoutXL	sfactorNames	string	"sc SC"
 layoutOptimize.state	menuState	string	"None"
 
@@ -36,10 +36,10 @@ spectre.envOpts  includePath  string "/home/cad/kits/IBM_CMRF8SF-LM013/IBM_PDK/c
 spectre.envOpts  modelFiles   string "/home/cad/kits/IBM_CMRF8SF-LM013/IBM_PDK/cmrf8sf/V1.2.1.2LM/Spectre/models/allModels.scs"
 spectre.opts	tnom	string	"25"
 
-ui	menuCmdOutput	boolean	t
-ui	textFont	string	"-*-courier-medium-r-*-*-12-*"
-ui	promptInput	boolean	t
-ui	menuCmdInput	boolean	t
+;ui	menuCmdOutput	boolean	t
+;ui	textFont	string	"-*-courier-medium-r-*-*-12-*"
+;ui	promptInput	boolean	t
+;ui	menuCmdInput	boolean	t
 
 wavescan.trace lineThickness string "Bold" | "fine" | "medium"
 wavescan.trace lineStyle string "Solid" | "dashed" | "dotted" 
