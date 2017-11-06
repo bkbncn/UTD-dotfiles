@@ -18,7 +18,7 @@ alias pipup='pip list -ol --format=freeze | grep -v "^(\-e|#)" | cut -d = -f 1 |
 
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 
-alias webup='cd $NDLHOME/vlsi;git pullup; pipup; mkdocs build; yes| cp -R $NDLHOME/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
+alias webup='cd $NDLHOME/vlsi;git pullup; mkdocs build; yes| cp -R $NDLHOME/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
 
 alias dush='du -sh'
 alias dusk='du -sk * .??* | sort -nr'
