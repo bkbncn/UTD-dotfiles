@@ -50,6 +50,8 @@ set +a
 # Some so-I-won't-bash-my-head-into-the-wall-because-I-deleted-a-file commands
 alias   cp='cp -i'
 alias   mv='mv -i'
+alias   rm='rm -I'
+alias   ssh="ssh -Y"
  
 # Some prompts
 PS1='{\h:\w} '
@@ -74,11 +76,6 @@ export MANPATH="/proj/ndl/home/xxx110230/linuxbrew/share/man:$MANPATH"
 export INFOPATH="/proj/ndl/home/xxx110230/linuxbrew/share/info:$INFOPATH"
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 export LS_OPTIONS=--color=auto
-
-alias rm='rm -I'
-alias ssh="ssh -Y"
-alias grep='grep --color=auto'
-alias v='$NDLHOME/vim/bin/vim'
 
 # load other settings #
 

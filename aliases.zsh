@@ -5,6 +5,7 @@
 alias v='$NDLHOME/vim/bin/vim'
 alias st='$HOME/sublime_text/sublime_text'
 alias n='nedit' 
+alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
 alias ssh='ssh -Y'
