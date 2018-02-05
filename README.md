@@ -6,9 +6,9 @@ Personal UTDallas Unix account settings
 	git clone https://github.com/bkbncn/UTD-dotfiles.git ~/.dotfiles
 	./.dotfiles/dotfiles.sh 
 
-For vim settings, install [Vundle](http://github.com/VumdleVim/Vundle.vim) 
+For vim settings, install [Vundle](http://github.com/VundleVim/Vundle.vim) 
 
-	git clone https://github.com/VumdleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
         
 For Cadence settings, go to project folder first
