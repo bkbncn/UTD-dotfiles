@@ -48,6 +48,7 @@ set +a
 
 # Aliases
 # Some so-I-won't-bash-my-head-into-the-wall-because-I-deleted-a-file commands
+alias   ls='ls --color=auto'
 alias   cp='cp -i'
 alias   mv='mv -i'
 alias   rm='rm -I'
@@ -75,7 +76,6 @@ export PATH="/proj/ndl/home/xxx110230/linuxbrew/bin:/proj/ndl/home/xxx110230/lin
 export MANPATH="/proj/ndl/home/xxx110230/linuxbrew/share/man:$MANPATH"
 export INFOPATH="/proj/ndl/home/xxx110230/linuxbrew/share/info:$INFOPATH"
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-export LS_OPTIONS=--color=auto
 
 # load other settings #
 

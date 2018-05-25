@@ -1,4 +1,4 @@
-# Xiangyu updated Sep 18, 2017
+# Xiangyu updated May 25, 2018
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -53,7 +53,7 @@ ZSH_THEME="random"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump brew git thefuck themes)
+plugins=(autojump brew git thefuck themes z zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 

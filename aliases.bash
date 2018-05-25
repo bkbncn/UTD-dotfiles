@@ -1,4 +1,4 @@
-##updated at Sep 15, 2017
+##updated at May 25, 2018
 ###############Xiangyu#################### 
 # about system # 
 alias grep='grep --color=auto'
@@ -21,11 +21,11 @@ alias ndlhome='cd /proj/ndl/home/xxx110230'
 alias webup='cd $NDLHOME/vlsi;git pullup; mkdocs build; yes| cp -R $NDLHOME/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
 
 alias dush='du -sh'
-alias dusk='du -sk * .??* | sort -nr'
+alias dusk='du -sk * | sort -nr'
 
 # Customize listing format #
-alias la='ls -a'
-alias ll='ls -aFlh'
+alias la='ls -aFhl'
+alias ll='ls -AFhl'
 alias llm='ll | more'
 alias ls.='ls -d .*' 
 alias lsd='ls -lh | grep "^d"'	

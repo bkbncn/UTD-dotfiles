@@ -1,4 +1,4 @@
-##updated at Oct 17, 2017
+##updated at May 25, 2018
 ###############Xiangyu#################### 
 
 ## about system ##
@@ -21,19 +21,16 @@ alias ndlhome='cd /proj/ndl/home/xxx110230'
 
 alias webup='cd $NDLHOME/vlsi;git pullup; mkdocs build; yes| cp -R $NDLHOME/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
 
-alias dush='du -sh'
-alias dusk='du -sk * .??* | sort -nr'
-
 # Customize listing format #
-alias la='ls -AFhl'
-alias ll='ls -aFhl'
-alias lt='ls -Flht'   #sorted by date
+alias la='ls -aFhl'
+alias ll='ls -AFhl'
+alias lt='ls -Fhlt'   #sorted by date
 alias lr='ls -FhlR'   #recursive
 alias lsdot='ls -ld .*'
-alias lsd='ls -lh | grep "^d"'
-alias lsf='ls -lh | grep -v "^d"'
-alias lld='ls -alh | grep "^d" | egrep -v " \.+$"'
-alias llf='ls -alh | grep -v "^d"'
+alias lsd='ls -hl | grep "^d"'
+alias lsf='ls -hl | grep -v "^d"'
+alias lld='ls -Ahl | grep "^d" | egrep -v " \.+$"'
+alias llf='ls -Ahl | grep -v "^d"'
 
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
@@ -46,7 +43,7 @@ alias tab='gnome-terminal --tab'
 
 # Common alias
 alias dush='du -sh'
-alias dusk='du -sk * .??* | sort -nr'
+alias dusk='du -sk * | sort -nr'
 alias h='history'
 alias hgrep="fc -El 0 | grep"
 alias p='ps -f'
