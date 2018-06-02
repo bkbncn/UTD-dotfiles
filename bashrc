@@ -1,4 +1,4 @@
-# Xiangyu updated at Oct 18, 2017
+# Xiangyu updated at June 1, 2018
 # $Id: .bashrc,v 1.2 1998/05/02 21:42:35 amos Exp $
 # Individual per-interactive-shell startup file
 
@@ -79,10 +79,10 @@ export INFOPATH="/proj/ndl/home/xxx110230/linuxbrew/share/info:$INFOPATH"
 
 # load other settings #
 
-for file in $HOME/.dotfiles/{aliases,extra,functions}.bash; do
+for file in $HOME/.dotfiles/{aliases,extra,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
 
+alias brewup='brew update; brew upgrade; brew cleanup'
 ####################Xu####################
-

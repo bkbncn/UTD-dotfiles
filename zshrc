@@ -1,4 +1,4 @@
-# Xiangyu updated May 25, 2018
+# Xiangyu updated June 1 2018
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Customize to your needs...
-for file in ~/.dotfiles/{aliases,extra}.zsh; do
+for file in ~/.dotfiles/{aliases,aliaszsh,extra,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file

@@ -1,45 +1,41 @@
-##updated at May 25, 2018
+##updated at June 1, 2018
 ###############Xiangyu#################### 
-
-## about system ##
-alias v='$NDLHOME/vim/bin/vim'
-alias st='$HOME/sublime_text/sublime_text'
-alias n='nedit' 
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -I'
-alias ssh='ssh -Y'
+# about system # 
 alias grep='grep --color=auto'
+alias g='git' 
+alias n='nedit' 
+#alias v='$NDLHOME/vim/bin/vim'
+alias st='$NDLHOME/sublime_text/sublime_text' 
 
 alias cd-='cd -'
 alias cd..='cd ..'
-
-alias brewup='bubu; upgrade_oh_my_zsh; pyenv update'
-alias pipup='pip list -ol --format=freeze | grep -v "^(\-e|#)" | cut -d = -f 1 | xargs -n1 pip install -U'
+alias cd.2='cd ../..'
 
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 
-alias webup='cd $NDLHOME/vlsi;git pullup; mkdocs build; yes| cp -R $NDLHOME/vlsi/site/* ~/public_html/; yes| ~/fixmywebsite; cd -'
-
-# Customize listing format #
-alias la='ls -aFhl'
-alias ll='ls -AFhl'
-alias lt='ls -Fhlt'   #sorted by date
-alias lr='ls -FhlR'   #recursive
-alias lsdot='ls -ld .*'
-alias lsd='ls -hl | grep "^d"'
-alias lsf='ls -hl | grep -v "^d"'
-alias lld='ls -Ahl | grep "^d" | egrep -v " \.+$"'
-alias llf='ls -Ahl | grep -v "^d"'
-
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
-
-#'nautilus .' open in finder
 alias open='nautilus'
 
 # 'gnome-terminal --tab' open a new tab, ctrl+shift+t
 alias tab='gnome-terminal --tab'
+
+#echo $PATH | sed 's/:/\n/g'
+alias path='echo "${PATH//:/\n}"'
+
+# Customize listing format #
+alias la='ls -aFhl'
+alias ll='ls -AFhl'
+alias llm='ll | more'
+alias ls.='ls -d .*' 
+alias lsd='ls -lh | grep "^d"'	
+alias lsdm='ls -lh | grep "^d" | more' 
+alias lsf='ls -lh | grep -v "^d"'
+alias lsfm='ls -lh | grep -v "^d"| more'
+alias lld='ls -Alh | grep "^d" | egrep -v " \.+$"'	
+alias lldm='ls -Alh | grep "^d" | egrep -v " \.+$" | more' 
+alias llf='ls -Alh | grep -v "^d"'
+alias llfm='ls -Alh | grep -v "^d"|more'
+alias lt='ls -Fhlt'   #sorted by date
+alias lr='ls -FhlR'   #recursive
 
 # Common alias
 alias dush='du -sh'
@@ -49,53 +45,23 @@ alias hgrep="fc -El 0 | grep"
 alias p='ps -f'
 alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
-
-## suffix aliases
-#
-alias -s txt='vim'
-alias -s zip='unzip -l'
-alias -s rar="unrar l"
-alias -s tgz='tar -xzvf'
-alias -s tar="tar tf"
-alias -s gz='tar -xzvf'
-alias -s bz2='tar -xjvf'
-
-## Command line head / tail shortcuts
-alias -g CA="2>&1 | cat -A"
-alias -g G='| grep'
-alias -g EG='|& egrep'
-alias -g H='| head'
-alias -g HL='|& head -20'
-alias -g T='| tail'
-alias -g TL='| tail -20'
-alias -g L='| less'
-alias -g LL="2>&1 | less"
-alias -g LS='| less -S'
-alias -g MM='| most'
-alias -g M='| more'
-alias -g NE="2> /dev/null"
-alias -g NUL="> /dev/null 2>&1"
-alias -g PIPE='|'
-alias -g S='| sort'
-alias -g NS='| sort -n'
-alias -g US='| sort -u'
-alias -g RNS='| sort -nr'
-alias -g X='| xargs'
-
-alias -g X0G='| xargs -0 egrep'
-alias -g X0='| xargs -0'
-alias -g XG='| xargs egrep'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
 
 # about source #
-alias sfic5=".  /proj/cad/startup/profile.ic-5"
-alias sfic6=".  /proj/cad/startup/profile.ee7325"
-alias sfsyn=".  /proj/cad/startup/profile.synopsys_2016"
+alias sic5=".  /proj/cad/startup/profile.ic-5"
+alias sic6=".  /proj/cad/startup/profile.ic-6.16"
+alias sic617=".  /proj/cad/startup/profile.ic-6.17"
+alias smt=".  /proj/cad/startup/profile.mentor"
+alias smt16=".  /proj/cad/startup/profile.mentor_2016"
+alias smt17=".  /proj/cad/startup/profile.mentor_2017"
+alias ssyn=".  /proj/cad/startup/profile.synopsys_2016"
 
 alias cadlk="clsAdminTool -are ."
 alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
 
 alias gdsrd="calibredrv -m"
-alias gdsread=".  /proj/cad/startup/profile.mentor_gf65; calibredrv -m"
+alias gdsread=".  /proj/cad/startup/profile.mentor; calibredrv -m"
 
 # about application #
 alias pygf65='cd ~/PyLayout/scripts&& . ../technology/gf65/PyLayout.sh'
