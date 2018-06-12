@@ -1,5 +1,11 @@
-#updated at June 1 2018
+#updated at June 12 2018
 ####################Xiangyu####################
+# set Cap as Ctrl
+# Add below line in /etc/default/keyboard
+# XKBOPTIONS="ctrl:nocaps"
+setxkbmap -option ctrl:nocaps
+# Swap Cap and Ctrl
+#setxkbmap -option ctrl:swapcaps
 
 # cadence lockfile # 
 # clsAdminTool -are .
