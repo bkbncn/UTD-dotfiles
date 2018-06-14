@@ -68,6 +68,7 @@ alias pygf65='cd ~/PyLayout/scripts&& . ../technology/gf65/PyLayout.sh'
 alias rungf65='cd $NDLHOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
 alias rungf55='cd $NDLHOME/cad/gf55/&& . /proj/cad/startup/profile.ic-6.16; . /proj/cad/startup/profile.mentor_2013; export TECHDIR=/proj/cad/library/mosis/GF55_LPe/cmos10lpe_CDS_oa_dl064_12_20160805/Calibre; export BEOL_STACK=6_00_02_00_LB; export IOTYPE=INLINE; export DESIGN_TYPE=CELL; virtuoso&'
 alias runic5='cd $HOME/cad/cadence/&& . /proj/cad/startup/profile.ic-5;icfb&'
+alias runic6='cd $HOME/cad/gf65/&& . /proj/cad/startup/profile.ee7325;virtuoso&'
 alias runit='cd $NDLHOME/training/ADE_5141/&& . /proj/cad/startup/profile.ic-5;icms&'
 alias rundv='cd $HOME/cad/synopsys/&& . /proj/cad/startup/profile.synopsys_2016;design_vision&'
 alias dv="design_vision&"
