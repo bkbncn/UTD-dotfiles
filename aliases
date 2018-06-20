@@ -1,4 +1,4 @@
-##updated at June 1, 2018
+##updated at June 19, 2018
 ###############Xiangyu#################### 
 # about system # 
 alias grep='grep --color=auto'
@@ -7,6 +7,7 @@ alias n='nedit'
 #alias v='$NDLHOME/vim/bin/vim'
 alias st='$NDLHOME/sublime_text/sublime_text' 
 
+alias 88='logout'
 alias cd-='cd -'
 alias cd..='cd ..'
 alias cd.2='cd ../..'
