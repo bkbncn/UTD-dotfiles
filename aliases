@@ -1,8 +1,9 @@
-##updated at June 19, 2018
+##updated at July 11, 2018
 ###############Xiangyu#################### 
 # about system # 
 alias grep='grep --color=auto'
 alias g='git' 
+alias m='gvim' 
 alias n='nedit' 
 #alias v='$NDLHOME/vim/bin/vim'
 alias st='$NDLHOME/sublime_text/sublime_text' 
