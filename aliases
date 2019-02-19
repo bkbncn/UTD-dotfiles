@@ -1,4 +1,4 @@
-##updated at July 11, 2018
+##updated at Febuary 12, 2019
 ###############Xiangyu#################### 
 # about system # 
 alias grep='grep --color=auto'
@@ -55,9 +55,11 @@ alias sic5=".  /proj/cad/startup/profile.ic-5"
 alias sic6=".  /proj/cad/startup/profile.ic-6.16"
 alias sic617=".  /proj/cad/startup/profile.ic-6.17"
 alias smt=".  /proj/cad/startup/profile.mentor"
-alias smt16=".  /proj/cad/startup/profile.mentor_2016"
-alias smt17=".  /proj/cad/startup/profile.mentor_2017"
-alias ssyn=".  /proj/cad/startup/profile.synopsys_2016"
+alias smt65=".  /proj/cad/startup/profile.mentor_gf65"
+alias smt18=".  /proj/cad/startup/profile.mentor_2018"
+alias ssp16=".  /proj/cad/startup/profile.synopsys_2016"
+alias ssp18=".  /proj/cad/startup/profile.synopsys_2018"
+alias stw=".  /proj/ndl/home/xxx110230/profile.tw"
 
 alias cadlk="clsAdminTool -are ."
 alias cadlock=".  /proj/cad/startup/profile.ic-5; clsAdminTool -are ."
