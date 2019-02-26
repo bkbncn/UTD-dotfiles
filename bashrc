@@ -8,7 +8,7 @@ umask 066
 ulimit -c 0		# Don't generate a core file
 
 
-# Set up a path if PS1 is not set (this implies a non-interactive shell)  
+# Set up a path if PS1 is not set (this implies a non-interactive shell)
 if [ -z "$PS1" ] ; then
   PATH=/usr/local/bin:/sbin:/usr/sbin:/usr/bin:/usr/ccs/bin:/usr/local/openwin/bin:/usr/openwin/bin
   MANPATH=/usr/local/man:/usr/man:/usr/share/man
@@ -35,10 +35,10 @@ fi
 set +a
 
 # settings for interactive shells
-# To turn off the following settings comment it 
+# To turn off the following settings comment it
   export HISTCONTROL=ignoredups  # Ignore duplicate commands
   export HISTFILESIZE=40         # Remember the last 40 commands
-  export HISTSIZE=40             
+  export HISTSIZE=40
 # set ignoreeof         # Prevents usage of Control-D from logging out
   set noclobber         # Prevents '>' from overwriting files
 # set noglob            # Prevents wildcard expansion from taking place
@@ -53,7 +53,7 @@ alias   cp='cp -i'
 alias   mv='mv -i'
 alias   rm='rm -I'
 alias   ssh="ssh -Y"
- 
+
 # Some prompts
 PS1='{\h:\w} '
 

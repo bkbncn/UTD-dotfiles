@@ -23,10 +23,10 @@ let((skillPath)
 ;################################################
 let( (bindKeyFileList file path saveSkillPath)
     bindKeyFileList = '(
-                 ".leBindKeys.il" 
+                 ".leBindKeys.il"
                  ".schBindKeys.il"
                     )
-    
+
 ;  this is the path that is searched for the files
     path = strcat(
               ". ~ "
@@ -37,13 +37,13 @@ let( (bindKeyFileList file path saveSkillPath)
     setSkillPath(path)
 ;
 ;
- 
+
    foreach(file bindKeyFileList
        if(isFile(file) then
           loadi(file)
          )
     )
- 
+
     setSkillPath(saveSkillPath)
 )
 

@@ -1,4 +1,4 @@
-#updated at Jan 29, 2019
+# Xiangyu updated at Feb 26, 2019
 ####################Xiangyu####################
 
 #alias tree="ls -R | grep ':$' | sed -e 's/:$//' -e 's/[^\/]*\//|  /g' -e 's/|  \([^|]\)/\`--\1/g'"
@@ -20,7 +20,7 @@ bk()
     if [ -n "$1" ]
 # Test whether wildcard argument is present (non-empty).
     then
-        cp "$1"{,~bk} 
+        cp "$1"{,~bk}
     else
         echo "no wildcard argument"
     fi
@@ -33,7 +33,7 @@ cpv()
     then
     {
         cp "$1" "$2"
-        vim "$2" 
+        vim "$2"
     }
     else
         echo "no wildcard argument"
@@ -46,9 +46,13 @@ function lgr
 if [ -n "$1" ]
 then
   ls -AFhl | grep "$1"
-else  
+else
   echo "no wildcard argument"
-fi  
+fi
+}
+
+vimup() {
+  vim -c "execute \"PlugUpgrade\" | execute \"PlugUpdate\" | qa"
 }
 
 # extract() {

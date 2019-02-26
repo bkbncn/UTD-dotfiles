@@ -1,12 +1,13 @@
-##updated at Febuary 12, 2019
-###############Xiangyu#################### 
-# about system # 
+# Xiangyu updated at Feb 26, 2019
+#
+###############Xiangyu####################
+# about system #
 alias grep='grep --color=auto'
-alias g='git' 
-alias m='gvim' 
-alias n='nedit' 
+alias g='git'
+alias m='gvim'
+alias n='nedit'
 #alias v='$NDLHOME/vim/bin/vim'
-alias st='$NDLHOME/sublime_text/sublime_text' 
+alias st='$NDLHOME/sublime_text/sublime_text'
 
 alias 88='logout'
 alias cd-='cd -'
@@ -27,13 +28,13 @@ alias path='echo "${PATH//:/\n}"'
 alias la='ls -aFhl'
 alias ll='ls -AFhl'
 alias llm='ll | more'
-alias ls.='ls -d .*' 
-alias lsd='ls -lh | grep "^d"'	
-alias lsdm='ls -lh | grep "^d" | more' 
+alias ls.='ls -d .*'
+alias lsd='ls -lh | grep "^d"'
+alias lsdm='ls -lh | grep "^d" | more'
 alias lsf='ls -lh | grep -v "^d"'
 alias lsfm='ls -lh | grep -v "^d"| more'
-alias lld='ls -Alh | grep "^d" | egrep -v " \.+$"'	
-alias lldm='ls -Alh | grep "^d" | egrep -v " \.+$" | more' 
+alias lld='ls -Alh | grep "^d" | egrep -v " \.+$"'
+alias lldm='ls -Alh | grep "^d" | egrep -v " \.+$" | more'
 alias llf='ls -Alh | grep -v "^d"'
 alias llfm='ls -Alh | grep -v "^d"|more'
 alias lt='ls -Fhlt'   #sorted by date

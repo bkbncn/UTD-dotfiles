@@ -7,11 +7,11 @@ setxkbmap -option ctrl:nocaps
 # Swap Cap and Ctrl
 #setxkbmap -option ctrl:swapcaps
 
-# cadence lockfile # 
+# cadence lockfile #
 # clsAdminTool -are .
 # to release all edit locks file by cadence in the current folder
 # clsAdminTool -asre /path/to/the/locked/file
-# to release all edit lock on a specific file 
+# to release all edit lock on a specific file
 # or run clsAdminTool to do other cadence lockfile related job
 # find . -name "*.cdslck" -exec rm -f {}
 # this command will remove all the cadence lockfile, but be cautious
