@@ -1,4 +1,4 @@
-" Xiangyu updated at Feb 26, 2019
+" Xiangyu updated at Jun 25, 2019
 """"""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""
@@ -12,8 +12,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 "Plugin 'tpope/vim-unimpaired'
-"Plugin 'Raimondi/delimitMate'
-"au FileType python let b:delimitMate_nesting_quotes = ['"']
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'vim-airline/vim-airline'
@@ -32,12 +30,6 @@ let g:ctrlp_custom_ignore = {
             \ }
 let g:ctrlp_user_command = ['find %s -type f']
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-nmap <Leader>p :CtrlP<CR>
-nmap <Leader>pb :CtrlPBuffer<CR>
-nmap <Leader>pm :CtrlPMixed<CR>
-nmap <Leader>pr :CtrlPMRU<CR>
-
-"Plug 'easymotion/vim-easymotion'
 
 "switch between buffer with gb gB or [b ]b
 Plug 'jeetsukumaran/vim-buffergator'
@@ -49,7 +41,8 @@ Plug 'matze/vim-move'
 let g:move_key_modifier = 'C'
 
 " Indent guide by <Leader>ig
-Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 Plug 'junegunn/vim-easy-align'
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -58,24 +51,29 @@ nmap ga <Plug>(EasyAlign)
 Plug '/proj/ndl/home/xxx110230/linuxbrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
 
 "Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
 nmap <Leader>u :UndotreeToggle<CR>
 
-"Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
-"map <space>n :NERDTreeToggle<CR>
-"let g:NERDTreeMinimalUI = 1
-"let g:NERDTreeDirArrows = 1
-"let g:NERDTreeHijackNetrw = 0
-"let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-"close vim if the only window left open is a NERDTree
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
+map <space>n :NERDTreeToggle<CR>
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeHijackNetrw = 0
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/nerdcommenter'
 nmap <C-_>  <Plug>NERDCommenterToggle  "Ctrl+/ also works
 vmap <C-_>  <Plug>NERDCommenterToggle<CR>gv
@@ -219,14 +217,13 @@ Plug 'tpope/vim-markdown', {'for': 'markdown'}
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger="<C-j>"
-"let g:UltiSnipsExpandTrigger="<C-f>"
-"let g:UltiSnipsJumpForwardTrigger="<C-f>"
-"let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+let g:UltiSnipsExpandTrigger="<C-f>"
+let g:UltiSnipsJumpForwardTrigger="<C-f>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 let g:UltiSnipsSnippetsDir = $HOME.'/.dotfiles'
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.dotfiles', 'UltiSnips']
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 set completeopt=longest,menu
 "Enable TAB for other Plugins, like UltiSnips
 "inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
@@ -303,12 +300,6 @@ set expandtab           " enpend TAB to space,Ctrl-V<TAB> to input TAB
 " Compare
 set diffopt+=vertical
 
-" Searching
-"set incsearch           " Incremental search, partial match
-"set hlsearch            " Highlight search results
-"set ignorecase          " Case insensitive search
-"set smartcase           " Non-case sensitive search
-
 " Mouse
 set mouse+=a            " Mouse in all modes
 set mousemodel=popup
@@ -318,9 +309,7 @@ set clipboard=unnamed  "Yanks on system clipboard
 set backspace=2
 
 " Change mapleader
-"let mapleader = "Space"
-nmap <Space> <Leader>
-vmap <Space> <Leader>
+let mapleader = "\<space>"
 
 " Fast saving
 nnoremap <Leader>w :w!<CR>
@@ -331,16 +320,9 @@ map! <C-E> <End>
 map! <C-D> <Del>
 "map! <C-H> <Left> "not working, still <BS>
 cmap <C-b> <Left>  "not working at Insert Mode
-map! <C-J> <Down>
 map! <C-K> <Up>
+map! <C-J> <Down>
 map! <C-L> <Right>
-
-"Keep search pattern at the center of the screen.
-nmap <silent> n nzz
-nmap <silent> N Nzz
-nmap <silent> * *zz
-nmap <silent> # #zz
-nmap <silent> g* g*zz
 
 "Insert newline without entering insert mode
 nmap <Leader>O O<Esc>j
@@ -351,30 +333,30 @@ inoremap kj <Esc>
 vnoremap kj <Esc>
 
 " Toggle Vexplore like NERDTree
-function! ToggleVExplorer()
-  if exists("t:expl_buf_num")
-      let expl_win_num = bufwinnr(t:expl_buf_num)
-      if expl_win_num != -1
-          let cur_win_nr = winnr()
-          exec expl_win_num . 'wincmd w'
-          close
-          exec cur_win_nr . 'wincmd w'
-          unlet t:expl_buf_num
-      else
-          unlet t:expl_buf_num
-      endif
-  else
-      exec '1wincmd w'
-      Vexplore
-      let t:expl_buf_num = bufnr("%")
-  endif
-endfunction
-map <silent> <space>n :call ToggleVExplorer()<CR>
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
+"function! ToggleVExplorer()
+  "if exists("t:expl_buf_num")
+      "let expl_win_num = bufwinnr(t:expl_buf_num)
+      "if expl_win_num != -1
+          "let cur_win_nr = winnr()
+          "exec expl_win_num . 'wincmd w'
+          "close
+          "exec cur_win_nr . 'wincmd w'
+          "unlet t:expl_buf_num
+      "else
+          "unlet t:expl_buf_num
+      "endif
+  "else
+      "exec '1wincmd w'
+      "Vexplore
+      "let t:expl_buf_num = bufnr("%")
+  "endif
+"endfunction
+"map <silent> <space>n :call ToggleVExplorer()<CR>
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
 "let g:netrw_list_hide= netrw_gitignore#Hide()
 
 " Visual mode pressing * or # searches for the current selection
@@ -445,6 +427,8 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 command! TrimWhiteSpace call TrimWhitespace()
+" Remove space at line ending, same as TrimWhitespace
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 "------------Start Python PEP 8 stuff----------------
 "omnicomplete
