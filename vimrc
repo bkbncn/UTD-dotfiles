@@ -1,4 +1,4 @@
-" Xiangyu updated at Jun 25, 2019
+" Xiangyu updated at Jun 27, 2019
 """"""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""
@@ -23,26 +23,23 @@ let g:airline_theme='solarized'
 
 Plug 'ctrlpvim/ctrlp.vim'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-            \ 'file': '\v\.(exe|so|dll)$',
-            \ 'link': 'some_bad_symbolic_links',
-            \ }
-let g:ctrlp_user_command = ['find %s -type f']
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
-"switch between buffer with gb gB or [b ]b
+Plug 'terryma/vim-multiple-cursors'
+
+" switch between buffer with gb gB or [b ]b
 Plug 'jeetsukumaran/vim-buffergator'
-" Close the current buffer and move to the previous one
+" close the current buffer and move to the previous one
 nmap <Leader>bd :bp <BAR> bd #<CR>
 
-"move lines by C-j and C-k
+" move lines by C-j and C-k
 Plug 'matze/vim-move'
 let g:move_key_modifier = 'C'
 
-" Indent guide by <Leader>ig
 "Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
+
 Plug 'junegunn/vim-easy-align'
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -60,6 +57,8 @@ set hlsearch
 let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
+
+Plug 'justinmk/vim-sneak'
 
 "Plug 'mbbill/fencview'
 Plug 'mbbill/undotree'
@@ -104,11 +103,6 @@ nmap <buffer> <silent> <LocalLeader>= :ALEFix<CR>
 nmap <Leader>a  <Plug>(ale_detail) ":ALEDetail<CR>
 nmap <Leader>an <Plug>(ale_next)
 nmap <Leader>ap <Plug>(ale_previous)
-
-Plug 'mileszs/ack.vim'
-let g:ackprg = 'ag --vimgrep'
-cnoreabbrev Ack Ack!
-nmap <Leader>ag :Ack!<Space>
 
 Plug 'skywind3000/asyncrun.vim'
 " automatically open quickfix window when AsyncRun command is executed
@@ -165,7 +159,9 @@ nmap <F5> :call <SID>compile_and_run()<CR>
 "nmap <silent> <F9> :AsyncRun gcc -Wall -O2 "$( VIM_FILEPATH,)" -o "$( VIM_FILEDIR,)/$( VIM_FILENOEXT,)" <CR>
 " toggle quickfix window
 nmap <F10> :call asyncrun#quickfix_toggle(6)<CR>
-"Plug 'sillybun/vim-repl'
+
+Plug 'kassio/neoterm'
+let g:neoterm_default_mod = 'rightbelow'
 "Plug 'vim-vdebug/vdebug'
 
 Plug 'majutsushi/tagbar'
@@ -204,7 +200,7 @@ let g:pymode_run=1
 "Plug 'jeetsukumaran/vim-pythonsense', {'for': 'python'}
 "Plug 'tmhedberg/SimpylFold', {'for': 'python'}
 "Plug 'lambdalisue/vim-pyenv', {'for': 'python'}
-
+"Plug 'goerz/jupytext.vim'
 
 "Markdown
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
@@ -213,7 +209,6 @@ let g:instant_markdown_slow = 1
 "let g:instant_markdown_allow_unsafe_content = 1
 Plug 'tpope/vim-markdown', {'for': 'markdown'}
 "Plug 'jtratner/vim-flavored-markdown', {'for': 'markdown'}
-
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
