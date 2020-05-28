@@ -1,4 +1,4 @@
-" Xiangyu updated at Jun 27, 2019
+" Xiangyu updated at May 27, 2020
 """"""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""
@@ -13,12 +13,14 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 "Plugin 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#buffer_nr_show = 1
-"let g:airline#extensions#tabline#fnamemod = ':t'  "Only show filename
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamemod = ':t'  "Only show filename
 let g:airline_theme='solarized'
 
 Plug 'ctrlpvim/ctrlp.vim'
@@ -26,10 +28,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 
 " switch between buffer with gb gB or [b ]b
-Plug 'jeetsukumaran/vim-buffergator'
+"Plug 'jeetsukumaran/vim-buffergator'
 " close the current buffer and move to the previous one
 nmap <Leader>bd :bp <BAR> bd #<CR>
 
@@ -65,7 +67,7 @@ Plug 'mbbill/undotree'
 nmap <Leader>u :UndotreeToggle<CR>
 
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
-map <space>n :NERDTreeToggle<CR>
+map <Space>n :NERDTreeToggle<CR>
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeHijackNetrw = 0
@@ -77,7 +79,7 @@ Plug 'scrooloose/nerdcommenter'
 nmap <C-_>  <Plug>NERDCommenterToggle  "Ctrl+/ also works
 vmap <C-_>  <Plug>NERDCommenterToggle<CR>gv
 
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 let g:airline#extensions#ale#enabled = 1
 let g:ale_completion_delay = 500
 let g:ale_echo_delay = 20
@@ -117,12 +119,12 @@ command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 if executable('ag')
     map <silent><Leader>rw :AsyncRun! -cwd=<root> ag -n --no-heading
         \ --color never -g *.h -g *.c* -g *.py -g *.js -g *.vim
-        \ <C-R><C-W> "<root>" <cr>
+        \ <C-R><C-W> "<root>" <CR>
 else
     map <silent><Leader>rw :AsyncRun! -cwd=<root> grep -n -s -R <C-R><C-W>
         \ --include='*.h' --include='*.c*' --include='*.py'
         \ --include='*.js' --include='*.vim'
-        \ '<root>' <cr>
+        \ '<root>' <CR>
 endif
 " F4: update Makefile with cmake
 "nmap <silent> <F4> :AsyncRun -cwd=<root> cmake . <CR>
@@ -160,8 +162,8 @@ nmap <F5> :call <SID>compile_and_run()<CR>
 " toggle quickfix window
 nmap <F10> :call asyncrun#quickfix_toggle(6)<CR>
 
-Plug 'kassio/neoterm'
-let g:neoterm_default_mod = 'rightbelow'
+"Plug 'kassio/neoterm'
+"let g:neoterm_default_mod = 'rightbelow'
 "Plug 'vim-vdebug/vdebug'
 
 Plug 'majutsushi/tagbar'
@@ -232,7 +234,10 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_global_ycm_extra_conf = "~/.dotfiles/ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_python_binary_path='python'
-nmap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <buffer> <silent> <Leader>gd :YcmCompleter GoTo<CR>
+nnoremap <buffer> <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <buffer> <silent> <Leader>rr :YcmCompleter RefactorRename<Space>
+"nmap <Leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "nmap <Leader>gg :YcmCompleter GoTo<CR>
 "nmap <Leader>gc :YcmCompleter GoToDeclaration<CR>
 "nmap <Leader>gf :YcmCompleter GoToDefinition<CR>
@@ -254,7 +259,7 @@ set cursorline          " Highlight current line
 set laststatus=2        " Always show the statusline
 set showcmd             " show the command you're running in the status bar
 set hidden
-set synmaxcol=999       " Syntax coloring too-long lines is slow
+set synmaxcol=99        " Syntax coloring too-long lines is slow
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -265,6 +270,7 @@ set scrolloff=3         " Keep three lines below the last line when scrolling
 set spelllang=en_us     " :set spell to start spell check
 set showmatch           " brackets
 set list lcs=tab:>-,trail:¬,nbsp:%,extends:>,precedes:<
+set shortmess-=S
 
 set backup
 set writebackup
@@ -276,11 +282,11 @@ set noswapfile      " no swap files
 
 " Split window location
 set splitbelow "Default above
-"set splitright "Default left
+set splitright "Default left
 
 " Enable folding
 set foldmethod=syntax
-set foldlevel=99
+"set foldlevel=99
 set nofoldenable
 
 " Indentation
@@ -304,7 +310,7 @@ set clipboard=unnamed  "Yanks on system clipboard
 set backspace=2
 
 " Change mapleader
-let mapleader = "\<space>"
+let mapleader = "\<Space>"
 
 " Fast saving
 nnoremap <Leader>w :w!<CR>
@@ -328,25 +334,25 @@ inoremap kj <Esc>
 vnoremap kj <Esc>
 
 " Toggle Vexplore like NERDTree
-"function! ToggleVExplorer()
-  "if exists("t:expl_buf_num")
-      "let expl_win_num = bufwinnr(t:expl_buf_num)
-      "if expl_win_num != -1
-          "let cur_win_nr = winnr()
-          "exec expl_win_num . 'wincmd w'
-          "close
-          "exec cur_win_nr . 'wincmd w'
-          "unlet t:expl_buf_num
-      "else
-          "unlet t:expl_buf_num
-      "endif
-  "else
-      "exec '1wincmd w'
-      "Vexplore
-      "let t:expl_buf_num = bufnr("%")
-  "endif
-"endfunction
-"map <silent> <space>n :call ToggleVExplorer()<CR>
+function! ToggleVExplorer()
+  if exists("t:expl_buf_num")
+      let expl_win_num = bufwinnr(t:expl_buf_num)
+      if expl_win_num != -1
+          let cur_win_nr = winnr()
+          exec expl_win_num . 'wincmd w'
+          close
+          exec cur_win_nr . 'wincmd w'
+          unlet t:expl_buf_num
+      else
+          unlet t:expl_buf_num
+      endif
+  else
+      exec '1wincmd w'
+      Vexplore
+      let t:expl_buf_num = bufnr("%")
+  endif
+endfunction
+"map <silent> <Space>n :call ToggleVExplorer()<CR>
 "let g:netrw_banner = 0
 "let g:netrw_liststyle = 3
 "let g:netrw_browse_split = 4
@@ -423,7 +429,7 @@ fun! TrimWhitespace()
 endfun
 command! TrimWhiteSpace call TrimWhitespace()
 " Remove space at line ending, same as TrimWhitespace
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <Leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
 "------------Start Python PEP 8 stuff----------------
 "omnicomplete
@@ -449,4 +455,3 @@ set backspace=indent,eol,start
 "Folding based on indentation:
 autocmd FileType python set foldmethod=indent
 "----------Stop python PEP 8 stuff--------------
-
