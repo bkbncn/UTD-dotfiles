@@ -1,4 +1,4 @@
-" Xiangyu updated at May 27, 2020
+" Xiangyu updated at Nov 28, 2020
 """"""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""
@@ -32,6 +32,12 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 
 " switch between buffer with gb gB or [b ]b
 "Plug 'jeetsukumaran/vim-buffergator'
+" move through buffers
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprev<cr>
+nmap <leader>[ :bp!<CR>
+nmap <leader>] :bn!<CR>
+nmap <leader>x :bd<CR>
 " close the current buffer and move to the previous one
 nmap <Leader>bd :bp <BAR> bd #<CR>
 
@@ -40,7 +46,7 @@ Plug 'matze/vim-move'
 let g:move_key_modifier = 'C'
 
 "Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesEnable' }
 
 Plug 'junegunn/vim-easy-align'
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -51,26 +57,33 @@ Plug '/proj/ndl/home/xxx110230/linuxbrew/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
+nmap s <Plug>(easymotion-s2)
+"nmap t <Plug>(easymotion-t2)
+"Plug 'justinmk/vim-sneak'
+let g:EasyMotion_smartcase = 1
 
-Plug 'justinmk/vim-sneak'
+Plug 'haya14busa/is.vim'
+"Plug 'haya14busa/incsearch.vim'
+"map /  <Plug>(incsearch-forward)
+"map ?  <Plug>(incsearch-backward)
+"map g/ <Plug>(incsearch-stay)
+"set hlsearch
+"let g:incsearch#auto_nohlsearch = 1
+"map n  <Plug>(incsearch-nohl-n)
+"map N  <Plug>(incsearch-nohl-N)
+"map *  <Plug>(incsearch-nohl-*)
+"map #  <Plug>(incsearch-nohl-#)
+"map g* <Plug>(incsearch-nohl-g*)
+"map g# <Plug>(incsearch-nohl-g#)
 
 "Plug 'mbbill/fencview'
-Plug 'mbbill/undotree'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 nmap <Leader>u :UndotreeToggle<CR>
 
 Plug 'scrooloose/nerdtree', {'on': ['NERDTree', 'NERDTreeFocus', 'NERDTreeToggle', 'NERDTreeCWD', 'NERDTreeFind'] }
 map <Space>n :NERDTreeToggle<CR>
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeHijackNetrw = 0
+"let g:NERDTreeHijackNetrw = 0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -91,7 +104,7 @@ let g:ale_command_wrapper = 'nice -n5'
 let g:ale_c_gcc_options = '-Wall -O2 -std=c99'
 let g:ale_cpp_gcc_options = '-Wall -O2 -std=c++14'
 let g:ale_set_highlights = 0
-let g:ale_statusline_format = ['Eâ€¢%d', 'Wâ€¢%d', 'OK']
+let g:ale_statusline_format = ['E•%d', 'W•%d', 'OK']
 let g:ale_python_pylint_options = ' --disable=W'
 let g:ale_linters = {
     \ 'c': ['gcc', 'clang'],
@@ -103,8 +116,10 @@ let g:ale_linters = {
 let g:ale_fixers = ['remove_trailing_lines','trim_whitespace', 'ale#fixers#generic_python#BreakUpLongLines', 'isort', 'yapf']
 nmap <buffer> <silent> <LocalLeader>= :ALEFix<CR>
 nmap <Leader>a  <Plug>(ale_detail) ":ALEDetail<CR>
-nmap <Leader>an <Plug>(ale_next)
-nmap <Leader>ap <Plug>(ale_previous)
+"nmap <Leader>an <Plug>(ale_next)
+"nmap <Leader>ap <Plug>(ale_previous)
+nmap ]a <Plug>(ale_next_wrap)
+nmap [a <Plug>(ale_previous_wrap)
 
 Plug 'skywind3000/asyncrun.vim'
 " automatically open quickfix window when AsyncRun command is executed
@@ -169,10 +184,11 @@ nmap <F10> :call asyncrun#quickfix_toggle(6)<CR>
 Plug 'majutsushi/tagbar'
 nmap <Space>t :TagbarToggle<CR>
 
+"C/C++
 "Plug 'kana/vim-textobj-user'
 "Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp'] }
 "Plug 'justinmk/vim-syntax-extra', { 'for': ['c', 'cpp'] }
-"Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
@@ -180,8 +196,8 @@ let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:cpp_no_function_highlight = 1
 
-"Python related
-"Plug 'python-mode/python-mode', { 'branch': 'develop' }
+"Python
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 let g:pymode_rope=0
 let g:pymode_rope_completion=0
 let g:pymode_rope_complete_on_dot=0
@@ -199,7 +215,7 @@ let g:pymode_syntax_all=1
 let g:pymode_folding=1
 let g:pymode_indent=1
 let g:pymode_run=1
-"Plug 'jeetsukumaran/vim-pythonsense', {'for': 'python'}
+Plug 'jeetsukumaran/vim-pythonsense', {'for': 'python'}
 "Plug 'tmhedberg/SimpylFold', {'for': 'python'}
 "Plug 'lambdalisue/vim-pyenv', {'for': 'python'}
 "Plug 'goerz/jupytext.vim'
@@ -233,7 +249,7 @@ let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_collect_identifiers_from_tags_files = 1
 "let g:ycm_global_ycm_extra_conf = "~/.dotfiles/ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion=1
-let g:ycm_python_binary_path='python'
+let g:ycm_python_binary_path='pythona'
 nnoremap <buffer> <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <buffer> <silent> <Leader>gr :YcmCompleter GoToReferences<CR>
 nnoremap <buffer> <silent> <Leader>rr :YcmCompleter RefactorRename<Space>
@@ -269,7 +285,7 @@ set wildmenu
 set scrolloff=3         " Keep three lines below the last line when scrolling
 set spelllang=en_us     " :set spell to start spell check
 set showmatch           " brackets
-set list lcs=tab:>-,trail:Â¬,nbsp:%,extends:>,precedes:<
+set list lcs=tab:>-,trail:¬,nbsp:%,extends:>,precedes:<
 set shortmess-=S
 
 set backup
@@ -331,7 +347,14 @@ nmap <Leader>o o<Esc>k
 
 "press kj to exit from insert and visual mode
 inoremap kj <Esc>
-vnoremap kj <Esc>
+"vnoremap kj <Esc>
+xnoremap jk <Esc>
+cnoremap jk <C-c>
+
+"active matchit
+runtime macros/matchit.vim
+"above works on all versions, line below needs vim8+
+"packadd! matchit
 
 " Toggle Vexplore like NERDTree
 function! ToggleVExplorer()
@@ -414,7 +437,7 @@ aug END
 " Convert ^M to newline
 " <Ctrl-V><Ctrl-M>
 " :g/^M/s// /g may also work
-" :%s//\r will get more blanklines
+" :%s/^M/\r will get more blanklines
 command ConvertM %s///
 
 " Merge multiple blank lines into single blank line
