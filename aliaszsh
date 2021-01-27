@@ -1,11 +1,9 @@
-# Xiangyu updated at Nov 28, 2020
+# Xiangyu updated at Jan 27, 2021
 ###############Xiangyu#################### 
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
 alias ssh='ssh -Y'
-
-alias vimn='vim -u NONE'
 
 alias brewup='bubu; upgrade_oh_my_zsh; pyenv update'
 

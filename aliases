@@ -1,5 +1,4 @@
-# Xiangyu updated at Nov 28, 2020
-#
+# Xiangyu updated at Jan 27, 2021
 ###############Xiangyu####################
 # about system #
 alias grep='grep --color=auto'
@@ -18,12 +17,17 @@ alias cd.2='cd ../..'
 alias ndlhome='cd /proj/ndl/home/xxx110230'
 alias afhome='cd /proj/afwerx/home/xxx110230'
 
+alias startvnc='vncserver RandR=1280x800,1920x1080'
+alias xr0="xrandr -s 0"
+alias xr1="xrandr -s 1280x800"
+alias xr2="xrandr -s 1920x1080"
+
 alias open='nautilus'
 
 # 'gnome-terminal --tab' open a new tab, ctrl+shift+t
 alias tab='gnome-terminal --tab'
 
-#echo $PATH | sed 's/:/\n/g'
+#echo $PATH | sed 's/:/\n/g' # steve's epsort, works on Linux
 alias path='echo "${PATH//:/\n}"'
 
 # Customize listing format #
