@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-[ "$vim" ] || vim=$NDLHOME/vim/bin/vim
+#[ "$vim" ] || vim=$NDLHOME/vim/bin/vim
+[ "$vim" ] || vim=vim
 [ $viminfo ] || viminfo=~/.viminfo
 
 usage="$(basename $0) [-a] [-c] [-l] [-[0-9]] [--debug] [--help] [regexes]"
